@@ -12,7 +12,7 @@ The Canonical Identity Platform uses best of breed open source software to provi
 - A relationship based access control (ReBAC) backend
 - A login UI and error pages
 
-While primarily designed for charmed workloads the Canonical Identity Platform can also be used to protect traditional Kubernetes and Virtual Machine based applications.
+While primarily designed for charmed workloads, the Canonical Identity Platform can also be used to protect traditional Kubernetes and Virtual Machine based applications.
 
 ## In this documentation
 
