@@ -15,8 +15,8 @@ jobs:
           pip install -r discourse-sync/requirements.txt
       - name: Run discord-sync
         env:
-          DISCOURSE_API_USERNAME: ${{ secrets.DISCOURSE_API_USERNAME_NN }}
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY_NN }}
+          DISCOURSE_API_USERNAME: ${{ secrets.DISCOURSE_API_USERNAME }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
           DOCS_DIR: ./DOCS
           TOPIC_IDS: ./topic-ids.yaml
         run: python ./discourse-sync/main.py check

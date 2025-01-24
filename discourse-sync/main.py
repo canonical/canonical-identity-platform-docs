@@ -7,8 +7,8 @@ from pydiscourse.exceptions import DiscourseClientError
 
 # Get configuration from environment variables
 DISCOURSE_HOST = os.environ.get('DISCOURSE_HOST', 'https://discourse.charmhub.io/')
-DISCOURSE_API_USERNAME = os.environ.get('DISCOURSE_API_USERNAME_NN')
-DISCOURSE_API_KEY = os.environ.get('DISCOURSE_API_KEY_NN')
+DISCOURSE_API_USERNAME = os.environ.get('DISCOURSE_API_USERNAME')
+DISCOURSE_API_KEY = os.environ.get('DISCOURSE_API_KEY')
 DOCS_DIR = os.environ.get('DOCS_DIR')
 TOPIC_IDS = os.environ.get('TOPIC_IDS')
 
