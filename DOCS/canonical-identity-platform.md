@@ -66,4 +66,5 @@ Thinking about using the Canonical Identity Platform for your next project? [Get
 | 3 | reference/kubernetes-charms/idp-ui | [Identity Platform Login UI](https://charmhub.io/identity-platform-login-ui-operator) |
 | 1 | explanation | [Explanation](/t/15743) |
 | 2 | explanation-security | [Security in Canonical Identity Platform](/t/15744) |
+| 2 | explanation-oauth2-oidc | [Understanding OAuth 2.0 and OpenID Connect](/t/16879) |
 [/details]
