@@ -55,23 +55,23 @@ When ```juju status``` displays the following output it means that the bundle is
 Model       Controller     Cloud/Region        Version  SLA          Timestamp
 iam         my-controller  microk8s/localhost  3.4.5    unsupported  12:02:03Z
 
-App                                  Version  Status   Scale  Charm                                Channel        Rev  Address         Exposed  Message   
-hydra                                v2.3.0   active       1  hydra                                               304  10.152.183.187  no       
-identity-platform-login-ui-operator  0.17.0   active       1  identity-platform-login-ui-operator  latest/edge    117  10.152.183.171  no       
-kratos                               v1.1.0   active       1  kratos                               latest/edge    470  10.152.183.175  no       
+App                                  Version  Status   Scale  Charm                                Channel        Rev  Address         Exposed  Message
+hydra                                v2.3.0   active       1  hydra                                               304  10.152.183.187  no
+identity-platform-login-ui-operator  0.17.0   active       1  identity-platform-login-ui-operator  latest/edge    117  10.152.183.171  no
+kratos                               v1.1.0   active       1  kratos                               latest/edge    470  10.152.183.175  no
 kratos-external-idp-integrator                waiting      1  kratos-external-idp-integrator       latest/edge    245  10.152.183.200  no       Provider is ready
-postgresql-k8s                       14.11    active       1  postgresql-k8s                       14/stable      281  10.152.183.180  no       
-self-signed-certificates                      active       1  self-signed-certificates             latest/stable  155  10.152.183.94   no       
+postgresql-k8s                       14.11    active       1  postgresql-k8s                       14/stable      281  10.152.183.180  no
+self-signed-certificates                      active       1  self-signed-certificates             latest/stable  155  10.152.183.94   no
 traefik-admin                        v2.11.0  active       1  traefik-k8s                          latest/stable  194  10.152.183.201  no       Serving at 10.64.140.44
 traefik-public                       v2.11.0  active       1  traefik-k8s                          latest/stable  194  10.152.183.181  no       Serving at 10.64.140.43
 
 Unit                                    Workload  Agent  Address      Ports  Message
-hydra/0*                                active    idle   10.1.24.150         
-identity-platform-login-ui-operator/0*  active    idle   10.1.24.148         
+hydra/0*                                active    idle   10.1.24.150
+identity-platform-login-ui-operator/0*  active    idle   10.1.24.148
 kratos-external-idp-integrator/0        active    idle   10.1.24.171         Invalid configuration: Missing required configuration 'issuer_url' for provider 'generic'
-kratos/0*                               active    idle   10.1.24.161         
+kratos/0*                               active    idle   10.1.24.161
 postgresql-k8s/0*                       active    idle   10.1.24.184         Primary
-self-signed-certificates/0*             active    idle   10.1.24.137         
+self-signed-certificates/0*             active    idle   10.1.24.137
 traefik-admin/0*                        active    idle   10.1.24.177         Serving at 10.64.140.44
 traefik-public/0*                       active    idle   10.1.24.141         Serving at 10.64.140.43
 ```
@@ -177,7 +177,7 @@ To access the Grafana dashboard:
 ```
 juju status --format json | yq '.applications.traefik-public.address'
 ```
-2. Use the traefik-public IP to access the Grafana dashboard at `http://<traefik_public_ip>/iam-grafana`
+2. Use the traefik-public IP to access the Grafana dashboard at `http://<traefik_public_ip>/iam-grafana-k8s`
 
 Upon navigating to the URL you will be presented with the following login screen:
 
