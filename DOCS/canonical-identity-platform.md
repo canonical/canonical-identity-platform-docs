@@ -45,7 +45,7 @@ Thinking about using the Canonical Identity Platform for your next project? [Get
 | 1 | how-to | [How-to guides](/t/11911) |
 | 2 | how-to/integrate-external-identity-provider | [Integrate with external identity providers](/t/11910) |
 | 2 | how-to/integrate-oidc-compatible-charms | [Integrate with OIDC compatible charms ](/t/11909) |
-| 2 | how-to/create-oauth-client | [Onboard an application with Charmed Hydra](/t/TODO-change-me) |
+| 2 | how-to/onboard-an-application-with-charmed-hydra | [Onboard an application with Charmed Hydra](/t/18152) |
 | 2 | how-to/integrate-cos | [Integrate with Canonical Observability Stack](/t/11908) |
 | 2 | how-to/ory-database-migration | [Perform Database Migration with Identity Platform Components](/t/11912) |
 | 2 | how-to/use-local-identity-provider | [Use local identity provider](/t/15548) |
