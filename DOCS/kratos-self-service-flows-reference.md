@@ -25,4 +25,5 @@ Once logged in, users can change their passwords.
 Users can also add or reset other authentication methods:
 - (un)link a time-based one-time password (TOTP) authenticator app
 - generate backup codes as a fallback 2fa method
-- add a passwordless login method.
+- add a passwordless login method
+- link social sign in accounts.

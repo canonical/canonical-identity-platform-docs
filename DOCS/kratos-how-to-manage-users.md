@@ -133,6 +133,40 @@ Or email:
 juju run kratos/0 delete-identity email={email}
 ```
 
+### list-oidc-accounts
+
+This action can be used to list the OIDC accounts linked to an identity using either the identity id or email.
+
+By id:
+
+```shell
+juju run kratos/0 list-oidc-accounts identity-id={identity_id}
+```
+
+By email:
+
+```shell
+juju run kratos/0 list-oidc-accounts email={email}
+```
+
+### unlink-oidc-account
+
+This action can be used to unlink a user's external identity provider account from their identity
+using either the identity id or email.
+The credential id to be removed must be specified, you can find it with `list-oidc-accounts` action.
+
+By id:
+
+```shell
+juju run kratos/0 unlink-oidc-account identity-id={identity_id} credential-id={oidc-identifier}
+```
+
+By email:
+
+```shell
+juju run kratos/0 unlink-oidc-account email={email} credential-id={oidc-identifier}
+```
+
 # Self-service flows
 The Identity Platform implements flows that users can perform on their own instead of waiting for an administrative intervention.
 See the [self-service flows reference](/t/15549) for more details.
