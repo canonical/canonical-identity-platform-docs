@@ -50,6 +50,7 @@ Thinking about using the Canonical Identity Platform for your next project? [Get
 | 2 | how-to/ory-database-migration | [Perform Database Migration with Identity Platform Components](/t/11912) |
 | 2 | how-to/use-local-identity-provider | [Use local identity provider](/t/15548) |
 | 2 | how-to/manage-users | [Manage users](/t/15547) |
+| 2 | how-to/link-accounts | [Link accounts](/t/18995) |
 | 1 | reference | Reference |
 | 2 | reference/bundles | Bundles |
 | 2 | reference/self-service-flows | [Self-service flows](/t/15549) |

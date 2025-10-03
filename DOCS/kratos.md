@@ -15,22 +15,22 @@ Thinking about using Kratos for your next project? [Get in touch](https://matrix
 
 ## Navigation
 
-| Level | Path                                        | Navlink                                                                  |
-| ----- |---------------------------------------------|--------------------------------------------------------------------------|
-| 1     | tutorial                                    | [Tutorial](/t/14090)                                                     |
-| 1     | how-to                                      | [How-to]()                                                               |
-| 2     | how-to/integrate-external-identity-provider | [Integrate with external identity providers](/t/11910)                   |
+| Level | Path                                        | Navlink                                                                 |
+| ----- |---------------------------------------------|-------------------------------------------------------------------------|
+| 1     | tutorial                                    | [Tutorial](/t/14090)                                                    |
+| 1     | how-to                                      | [How-to]()                                                              |
+| 2     | how-to/integrate-external-identity-provider | [Integrate with external identity providers](/t/11910)                  |
 | 2     | how-to/ory-database-migration               | [Perform Database Migration with Identity Platform Components](/t/11912) |
-| 2     | how-to/use-local-idp                        | [Use local identity provider](/t/15548)                                  |
-| 2     | how-to/manage-users                         | [Manage users](/t/15547)                                                 |
-| 2     | how-to/link-accounts                        | [Link accounts](/t/<TODO>)                                               |
-| 1     | reference                                   | [Reference]()                                                            |
-| 2     | reference/self-service-flows                | [Self-service flows](/t/15549)                                           |
-| 2     | actions                                     | [Actions](https://charmhub.io/kratos/actions)                            |
-| 2     | configuration                               | [Configurations](https://charmhub.io/kratos/configuration)               |
-| 2     | integrations                                | [Integrations](https://charmhub.io/kratos/integrations)                  |
-| 2     | libraries                                   | [Libraries](https://charmhub.io/kratos/libraries)                        |
-| 2     | resources                                   | [Resources](https://charmhub.io/kratos/resources)                        |
-| 1     | explanation                                 | [Explanation](/t/15707)                                                  |
-| 2     | explanation-security                        | [Kratos Charm Security](/t/15708)                                        |
+| 2     | how-to/use-local-idp                        | [Use local identity provider](/t/15548)                                 |
+| 2     | how-to/manage-users                         | [Manage users](/t/15547)                                                |
+| 2     | how-to/link-accounts                        | [Link accounts](/t/18995)                                               |
+| 1     | reference                                   | [Reference]()                                                           |
+| 2     | reference/self-service-flows                | [Self-service flows](/t/15549)                                          |
+| 2     | actions                                     | [Actions](https://charmhub.io/kratos/actions)                           |
+| 2     | configuration                               | [Configurations](https://charmhub.io/kratos/configuration)              |
+| 2     | integrations                                | [Integrations](https://charmhub.io/kratos/integrations)                 |
+| 2     | libraries                                   | [Libraries](https://charmhub.io/kratos/libraries)                       |
+| 2     | resources                                   | [Resources](https://charmhub.io/kratos/resources)                       |
+| 1     | explanation                                 | [Explanation](/t/15707)                                                 |
+| 2     | explanation-security                        | [Kratos Charm Security](/t/15708)                                       |
 
