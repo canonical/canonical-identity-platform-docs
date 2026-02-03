@@ -40,9 +40,7 @@ terraform -chdir=examples/tutorial init
 terraform -chdir=examples/tutorial apply -auto-approve
 ```
 
-<details>
-<summary>Expand to view the Terraform plan</summary>
-
+[details=Expand to view the Terraform plan]
 ```shell
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
@@ -495,8 +493,7 @@ Terraform will perform the following actions:
 
 Plan: 26 to add, 0 to change, 0 to destroy.
 ```
-
-</details>
+[/details]
 
 Terraform will create two Juju models (workspaces). These models are implicitly associated with your existing controller
 and MicroK8s cloud and hold your deployed, configured, and integrated Identify Platform charmed applications
