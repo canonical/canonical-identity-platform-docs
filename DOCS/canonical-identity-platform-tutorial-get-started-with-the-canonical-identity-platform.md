@@ -31,7 +31,7 @@ Start by cloning the GitHub repository that hosts these Terraform modules:
 
 ```shell
 git clone https://github.com/canonical/iam-bundle-integration.git && cd iam-bundle-integration
-git checkout v0.6.0
+git checkout v1.0.2
 ```
 
 Then navigate to the tutorial example and deploy the stack:
@@ -44,8 +44,7 @@ terraform -chdir=examples/tutorial apply -auto-approve
 <summary>Expand to view the Terraform plan</summary>
 
 ```shell
-Terraform used the selected providers to generate the following execution plan. Resource actions
-are indicated with the following symbols:
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
  <= read (data resources)
 
@@ -53,8 +52,8 @@ Terraform will perform the following actions:
 
   # juju_integration.traefik_certs will be created
   + resource "juju_integration" "traefik_certs" {
-      + id    = (known after apply)
-      + model = "core"
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
           + endpoint = "certificates"
@@ -84,50 +83,38 @@ Terraform will perform the following actions:
       + uuid       = (known after apply)
     }
 
-  # juju_offer.ingress_offer will be created
-  + resource "juju_offer" "ingress_offer" {
-      + application_name = "traefik-public"
-      + endpoints        = [
-          + "ingress",
-        ]
-      + id               = (known after apply)
-      + model            = "core"
-      + name             = "ingress"
-      + url              = (known after apply)
-    }
-
-  # juju_offer.postgresql_offer will be created
-  + resource "juju_offer" "postgresql_offer" {
+  # juju_offer.postgresql will be created
+  + resource "juju_offer" "postgresql" {
       + application_name = "postgresql-k8s"
       + endpoints        = [
           + "database",
         ]
       + id               = (known after apply)
-      + model            = "core"
+      + model_uuid       = (known after apply)
       + name             = "postgresql"
       + url              = (known after apply)
     }
 
-  # juju_offer.send_ca_certificate_offer will be created
-  + resource "juju_offer" "send_ca_certificate_offer" {
+  # juju_offer.send_ca_certificate will be created
+  + resource "juju_offer" "send_ca_certificate" {
       + application_name = "self-signed-certificates"
       + endpoints        = [
           + "send-ca-cert",
         ]
       + id               = (known after apply)
-      + model            = "core"
+      + model_uuid       = (known after apply)
       + name             = "send-ca-cert"
       + url              = (known after apply)
     }
 
-  # juju_offer.traefik_route_offer will be created
-  + resource "juju_offer" "traefik_route_offer" {
+  # juju_offer.traefik_route will be created
+  + resource "juju_offer" "traefik_route" {
       + application_name = "traefik-public"
       + endpoints        = [
           + "traefik-route",
         ]
       + id               = (known after apply)
-      + model            = "core"
+      + model_uuid       = (known after apply)
       + name             = "traefik-route"
       + url              = (known after apply)
     }
@@ -138,22 +125,50 @@ Terraform will perform the following actions:
       + constraints = "arch=amd64"
       + id          = (known after apply)
       + machines    = (known after apply)
-      + model       = "core"
       + model_type  = (known after apply)
+      + model_uuid  = (known after apply)
       + name        = "self-signed-certificates"
-      + placement   = (known after apply)
-      + principal   = (known after apply)
       + storage     = (known after apply)
       + trust       = false
       + units       = 1
 
       + charm {
-          + base     = "ubuntu@22.04"
-          + channel  = "latest/stable"
+          + base     = "ubuntu@24.04"
+          + channel  = "1/stable"
           + name     = "self-signed-certificates"
           + revision = (known after apply)
-          + series   = (known after apply)
         }
+    }
+
+  # module.certificates.juju_offer.certificates will be created
+  + resource "juju_offer" "certificates" {
+      + application_name = "self-signed-certificates"
+      + endpoints        = [
+          + "certificates",
+        ]
+      + id               = (known after apply)
+      + model_uuid       = (known after apply)
+      + name             = "certificates"
+      + url              = (known after apply)
+    }
+
+  # module.certificates.juju_offer.send_ca_cert will be created
+  + resource "juju_offer" "send_ca_cert" {
+      + application_name = "self-signed-certificates"
+      + endpoints        = [
+          + "send-ca-cert",
+        ]
+      + id               = (known after apply)
+      + model_uuid       = (known after apply)
+      + name             = "send-ca-cert"
+      + url              = (known after apply)
+    }
+
+  # module.iam.data.juju_model.this will be read during apply
+  # (config refers to values not yet known)
+ <= data "juju_model" "this" {
+      + id   = (known after apply)
+      + uuid = (known after apply)
     }
 
   # module.iam.data.juju_offer.ca_certificate will be read during apply
@@ -162,7 +177,6 @@ Terraform will perform the following actions:
       + application_name = (known after apply)
       + endpoints        = (known after apply)
       + id               = (known after apply)
-      + model            = (known after apply)
       + name             = (known after apply)
       + url              = (known after apply)
     }
@@ -173,98 +187,24 @@ Terraform will perform the following actions:
       + application_name = (known after apply)
       + endpoints        = (known after apply)
       + id               = (known after apply)
-      + model            = (known after apply)
       + name             = (known after apply)
       + url              = (known after apply)
     }
 
-  # module.iam.data.juju_offer.ingress will be read during apply
+  # module.iam.data.juju_offer.traefik_route will be read during apply
   # (config refers to values not yet known)
- <= data "juju_offer" "ingress" {
+ <= data "juju_offer" "traefik_route" {
       + application_name = (known after apply)
       + endpoints        = (known after apply)
       + id               = (known after apply)
-      + model            = (known after apply)
       + name             = (known after apply)
       + url              = (known after apply)
-    }
-
-  # module.iam.juju_application.hydra will be created
-  + resource "juju_application" "hydra" {
-      + config      = {}
-      + constraints = (known after apply)
-      + id          = (known after apply)
-      + machines    = (known after apply)
-      + model       = "iam"
-      + model_type  = (known after apply)
-      + name        = "hydra"
-      + placement   = (known after apply)
-      + principal   = (known after apply)
-      + storage     = (known after apply)
-      + trust       = true
-      + units       = 1
-
-      + charm {
-          + base     = "ubuntu@22.04"
-          + channel  = "latest/stable"
-          + name     = "hydra"
-          + revision = (known after apply)
-          + series   = (known after apply)
-        }
-    }
-
-  # module.iam.juju_application.kratos will be created
-  + resource "juju_application" "kratos" {
-      + config      = {}
-      + constraints = (known after apply)
-      + id          = (known after apply)
-      + machines    = (known after apply)
-      + model       = "iam"
-      + model_type  = (known after apply)
-      + name        = "kratos"
-      + placement   = (known after apply)
-      + principal   = (known after apply)
-      + storage     = (known after apply)
-      + trust       = true
-      + units       = 1
-
-      + charm {
-          + base     = "ubuntu@22.04"
-          + channel  = "latest/stable"
-          + name     = "kratos"
-          + revision = (known after apply)
-          + series   = (known after apply)
-        }
-    }
-
-  # module.iam.juju_application.login_ui will be created
-  + resource "juju_application" "login_ui" {
-      + config      = {}
-      + constraints = (known after apply)
-      + id          = (known after apply)
-      + machines    = (known after apply)
-      + model       = "iam"
-      + model_type  = (known after apply)
-      + name        = "login-ui"
-      + placement   = (known after apply)
-      + principal   = (known after apply)
-      + storage     = (known after apply)
-      + trust       = true
-      + units       = 1
-
-      + charm {
-          + base     = "ubuntu@22.04"
-          + channel  = "latest/stable"
-          + name     = "identity-platform-login-ui-operator"
-          + revision = (known after apply)
-          + series   = (known after apply)
-        }
     }
 
   # module.iam.juju_integration.hydra_database will be created
   + resource "juju_integration" "hydra_database" {
-      + id    = (known after apply)
-      + model = "iam"
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
           + endpoint = "pg-database"
@@ -272,14 +212,15 @@ Terraform will perform the following actions:
         }
       + application {
           + endpoint  = (known after apply)
+          + name      = (known after apply)
           + offer_url = (known after apply)
         }
     }
 
   # module.iam.juju_integration.hydra_login_ui_ui_info will be created
   + resource "juju_integration" "hydra_login_ui_ui_info" {
-      + id    = (known after apply)
-      + model = "iam"
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
           + endpoint = "ui-endpoint-info"
@@ -291,25 +232,26 @@ Terraform will perform the following actions:
         }
     }
 
-  # module.iam.juju_integration.hydra_public_ingress will be created
-  + resource "juju_integration" "hydra_public_ingress" {
-      + id    = (known after apply)
-      + model = "iam"
+  # module.iam.juju_integration.hydra_public_route will be created
+  + resource "juju_integration" "hydra_public_route" {
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
-          + endpoint = "public-ingress"
+          + endpoint = "public-route"
           + name     = "hydra"
         }
       + application {
           + endpoint  = (known after apply)
+          + name      = (known after apply)
           + offer_url = (known after apply)
         }
     }
 
   # module.iam.juju_integration.kratos_database will be created
   + resource "juju_integration" "kratos_database" {
-      + id    = (known after apply)
-      + model = "iam"
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
           + endpoint = "pg-database"
@@ -317,14 +259,15 @@ Terraform will perform the following actions:
         }
       + application {
           + endpoint  = (known after apply)
+          + name      = (known after apply)
           + offer_url = (known after apply)
         }
     }
 
   # module.iam.juju_integration.kratos_hydra_info will be created
   + resource "juju_integration" "kratos_hydra_info" {
-      + id    = (known after apply)
-      + model = "iam"
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
           + endpoint = "hydra-endpoint-info"
@@ -338,8 +281,8 @@ Terraform will perform the following actions:
 
   # module.iam.juju_integration.kratos_login_ui_info will be created
   + resource "juju_integration" "kratos_login_ui_info" {
-      + id    = (known after apply)
-      + model = "iam"
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
           + endpoint = "kratos-info"
@@ -353,8 +296,8 @@ Terraform will perform the following actions:
 
   # module.iam.juju_integration.kratos_login_ui_ui_info will be created
   + resource "juju_integration" "kratos_login_ui_ui_info" {
-      + id    = (known after apply)
-      + model = "iam"
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
           + endpoint = "ui-endpoint-info"
@@ -366,25 +309,26 @@ Terraform will perform the following actions:
         }
     }
 
-  # module.iam.juju_integration.kratos_public_ingress will be created
-  + resource "juju_integration" "kratos_public_ingress" {
-      + id    = (known after apply)
-      + model = "iam"
+  # module.iam.juju_integration.kratos_public_route will be created
+  + resource "juju_integration" "kratos_public_route" {
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
-          + endpoint = "public-ingress"
+          + endpoint = "public-route"
           + name     = "kratos"
         }
       + application {
           + endpoint  = (known after apply)
+          + name      = (known after apply)
           + offer_url = (known after apply)
         }
     }
 
   # module.iam.juju_integration.login_ui_hydra_info will be created
   + resource "juju_integration" "login_ui_hydra_info" {
-      + id    = (known after apply)
-      + model = "iam"
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
           + endpoint = "hydra-endpoint-info"
@@ -396,17 +340,18 @@ Terraform will perform the following actions:
         }
     }
 
-  # module.iam.juju_integration.login_ui_public_ingress will be created
-  + resource "juju_integration" "login_ui_public_ingress" {
-      + id    = (known after apply)
-      + model = "iam"
+  # module.iam.juju_integration.login_ui_public_route will be created
+  + resource "juju_integration" "login_ui_public_route" {
+      + id         = (known after apply)
+      + model_uuid = (known after apply)
 
       + application {
-          + endpoint = "ingress"
+          + endpoint = "public-route"
           + name     = "login-ui"
         }
       + application {
           + endpoint  = (known after apply)
+          + name      = (known after apply)
           + offer_url = (known after apply)
         }
     }
@@ -418,20 +363,8 @@ Terraform will perform the following actions:
           + "kratos-info",
         ]
       + id               = (known after apply)
-      + model            = "iam"
+      + model_uuid       = (known after apply)
       + name             = "kratos-info-offer"
-      + url              = (known after apply)
-    }
-
-  # module.iam.juju_offer.oauth_offer will be created
-  + resource "juju_offer" "oauth_offer" {
-      + application_name = "hydra"
-      + endpoints        = [
-          + "oauth",
-        ]
-      + id               = (known after apply)
-      + model            = "iam"
-      + name             = "oauth-offer"
       + url              = (known after apply)
     }
 
@@ -441,11 +374,9 @@ Terraform will perform the following actions:
       + constraints        = "arch=amd64"
       + id                 = (known after apply)
       + machines           = (known after apply)
-      + model              = "core"
       + model_type         = (known after apply)
+      + model_uuid         = (known after apply)
       + name               = "postgresql-k8s"
-      + placement          = (known after apply)
-      + principal          = (known after apply)
       + resources          = {}
       + storage            = (known after apply)
       + storage_directives = {
@@ -456,10 +387,9 @@ Terraform will perform the following actions:
 
       + charm {
           + base     = "ubuntu@22.04"
-          + channel  = "14/stable"
+          + channel  = "14/edge"
           + name     = "postgresql-k8s"
           + revision = (known after apply)
-          + series   = (known after apply)
         }
     }
 
@@ -469,11 +399,9 @@ Terraform will perform the following actions:
       + constraints        = "arch=amd64"
       + id                 = (known after apply)
       + machines           = (known after apply)
-      + model              = "core"
       + model_type         = (known after apply)
+      + model_uuid         = (known after apply)
       + name               = "traefik-public"
-      + placement          = (known after apply)
-      + principal          = (known after apply)
       + storage            = (known after apply)
       + storage_directives = {}
       + trust              = true
@@ -484,11 +412,88 @@ Terraform will perform the following actions:
           + channel  = "latest/stable"
           + name     = "traefik-k8s"
           + revision = (known after apply)
-          + series   = (known after apply)
         }
     }
 
-Plan: 25 to add, 0 to change, 0 to destroy.
+  # module.iam.module.hydra.juju_application.application will be created
+  + resource "juju_application" "application" {
+      + config      = {}
+      + constraints = "arch=amd64"
+      + id          = (known after apply)
+      + machines    = (known after apply)
+      + model_type  = (known after apply)
+      + model_uuid  = (known after apply)
+      + name        = "hydra"
+      + storage     = (known after apply)
+      + trust       = true
+      + units       = 1
+
+      + charm {
+          + base     = "ubuntu@22.04"
+          + channel  = "latest/stable"
+          + name     = "hydra"
+          + revision = (known after apply)
+        }
+    }
+
+  # module.iam.module.hydra.juju_offer.oauth_offer will be created
+  + resource "juju_offer" "oauth_offer" {
+      + application_name = "hydra"
+      + endpoints        = [
+          + "oauth",
+        ]
+      + id               = (known after apply)
+      + model_uuid       = (known after apply)
+      + name             = "oauth-offer"
+      + url              = (known after apply)
+    }
+
+  # module.iam.module.kratos.juju_application.application will be created
+  + resource "juju_application" "application" {
+      + config      = {}
+      + constraints = "arch=amd64"
+      + id          = (known after apply)
+      + machines    = (known after apply)
+      + model_type  = (known after apply)
+      + model_uuid  = (known after apply)
+      + name        = "kratos"
+      + storage     = (known after apply)
+      + trust       = true
+      + units       = 1
+
+      + charm {
+          + base     = "ubuntu@22.04"
+          + channel  = "latest/stable"
+          + name     = "kratos"
+          + revision = (known after apply)
+        }
+    }
+
+  # module.iam.module.login_ui.juju_application.application will be created
+  + resource "juju_application" "application" {
+      + config      = {}
+      + constraints = "arch=amd64"
+      + id          = (known after apply)
+      + machines    = (known after apply)
+      + model_type  = (known after apply)
+      + model_uuid  = (known after apply)
+      + name        = "login-ui"
+      + resources   = {
+          + "oci-image" = "ghcr.io/canonical/identity-platform-login-ui:v0.24.2"
+        }
+      + storage     = (known after apply)
+      + trust       = true
+      + units       = 1
+
+      + charm {
+          + base     = "ubuntu@22.04"
+          + channel  = "latest/stable"
+          + name     = "identity-platform-login-ui-operator"
+          + revision = (known after apply)
+        }
+    }
+
+Plan: 26 to add, 0 to change, 0 to destroy.
 ```
 
 </details>
@@ -521,25 +526,25 @@ Your deployment is ready when `juju status` displays the following output:
 
 ```
 Model  Controller     Cloud/Region        Version  SLA          Timestamp
-iam    my-controller  microk8s/localhost  3.6.7    unsupported  15:54:43+02:00
+iam    my-controller  microk8s/localhost  3.6.13   unsupported  16:37:26+01:00
 
-SAAS        Status   Store  URL
-ingress     active   local  admin/core.ingress
-postgresql  active   local  admin/core.postgresql
+SAAS           Status  Store  URL
+postgresql     active  local  admin/core.postgresql
+traefik-route  active  local  admin/core.traefik-route
 
-App       Version  Status   Scale  Charm                                Channel        Rev  Address         Exposed  Message
-hydra     v2.3.0   active       1  hydra                                latest/stable  362  10.152.183.80   no       
-kratos    v1.3.1   active       1  kratos                               latest/stable  527  10.152.183.36   no       
-login-ui  0.20.0   active       1  identity-platform-login-ui-operator  latest/stable  166  10.152.183.192  no       
+App       Version  Status  Scale  Charm                                Channel        Rev  Address         Exposed  Message
+hydra     v2.3.0   active      1  hydra                                latest/stable  395  10.152.183.127  no       
+kratos    v1.3.1   active      1  kratos                               latest/stable  565  10.152.183.75   no       
+login-ui  0.24.2   active      1  identity-platform-login-ui-operator  latest/stable  197  10.152.183.135  no       
 
 Unit         Workload  Agent  Address      Ports  Message
-hydra/0*     active    idle   10.1.57.88          
-kratos/0*    active    idle   10.1.57.102         
-login-ui/0*  active    idle   10.1.57.92          
+hydra/0*     active    idle   10.1.57.184         
+kratos/0*    active    idle   10.1.57.183         
+login-ui/0*  active    idle   10.1.57.185         
 
 Offer              Application  Charm   Rev  Connected  Endpoint     Interface    Role
-kratos-info-offer  kratos       kratos  527  0/0        kratos-info  kratos_info  provider
-oauth-offer        hydra        hydra   362  0/0        oauth        oauth        provider
+kratos-info-offer  kratos       kratos  565  0/0        kratos-info  kratos_info  provider
+oauth-offer        hydra        hydra   395  0/0        oauth        oauth        provider
 ```
 
 ## Set up the identity provider
@@ -583,10 +588,10 @@ In this step we are going to:
 First, we need to know our deployment’s `redirect_uri`. Get the Kratos base URL provided by the ingress integration:
 
 ```shell
-juju show-unit kratos/0 --endpoint public-ingress
+juju show-unit kratos/0 --endpoint public-route
 ```
 
-It will look similar to `https://10.64.140.43/iam-kratos`.
+It will look similar to `https://10.64.140.43`.
 
 The `redirect_uri` should be: `<kratos-base-url>/self-service/methods/oidc/callback/github`.
 We will use this callback URL to configure your client in GitHub.
@@ -603,14 +608,14 @@ where you specify the GitHub configuration and enable the integrator charm:
 ```
 enable_kratos_external_idp_integrator = true
 
-idp_provider_config = {
-  client_id   = "<client-id>"
-  provider    = "github"
-  provider_id = "github"
-}
-
-idp_provider_credentials = {
-  client_secret = "<client-secret>"
+kratos_external_idp_integrator = {
+  config = {
+    client_id     = "<client-id>"
+    client_secret = "<client-secret>"
+    provider      = "github"
+    provider_id   = "github"
+    scope         = "user:email"
+  }
 }
 ```
 
@@ -674,7 +679,7 @@ To access the Grafana dashboard:
     juju show-unit grafana-k8s/0 | yq e '.["grafana-k8s/0"].relation-info[] | select(.endpoint=="ingress") | .application-data.external_host' -
     ```
 
-2. Use the traefik-public IP to access the Grafana dashboard at `http://<traefik_public_ip>/iam-grafana-k8s`.
+2. Use the traefik-public IP to access the Grafana dashboard at `https://<traefik_public_ip>/iam-grafana-k8s`.
 
 Upon navigating to the URL you will be presented with the following login screen:
 
