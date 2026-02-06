@@ -41,7 +41,7 @@ Thinking about using the Canonical Identity Platform for your next project? [Get
 | 1 | overview | [Home](/t/11825) |
 | 1 | tutorials | [Tutorial](/t/11917) |
 | 2 | tutorials/e2e-tutorial | [Getting started with the Canonical Identity Platform](/t/11916) |
-| 2 | tutorials/identity-access-proxy-tutorial | [Getting started with the Canonical Identity and Access Proxy](/t/14000) |
+| 2 | tutorials/identity-access-proxy-tutorial | [Getting started with the Canonical Identity and Access Proxy](/t/TODO-UPDATE) |
 | 1 | how-to | [How-to guides](/t/11911) |
 | 2 | how-to/integrate-external-identity-provider | [Integrate with external identity providers](/t/11910) |
 | 2 | how-to/integrate-oidc-compatible-charms | [Integrate with OIDC compatible charms ](/t/11909) |
