@@ -36,11 +36,9 @@ glauth-utils: 13948
 glauth-utils-tutorial: 13949
 glauth: 13946
 glauth-tutorial: 13947
-oathkeeper: 13972
-oathkeeper-tutorial: 14000
-oathkeeper-how-to-integrate: 13971
-oathkeeper-reference-auth-proxy: 13973
-oathkeeper-reference-access-proxy-flow: 13975
+oauth2-proxy: <TODO>
+oauth2-proxy-tutorial: <TODO>
+oauth2-proxy-how-to-integrate: <TODO>
 kratos: 12136
 kratos-tutorial: 14090
 kratos-how-to-use-local-idp: 15548
