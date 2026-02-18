@@ -13,7 +13,7 @@ To integrate the Identity Platform with an external Identity Provider, you need 
 
 ### Register the client
 
-In this section we are going to register an oAuth2 client that Kratos can use to authenticate users. If you have already registered a client and configured its redirect URI, you can just skip to the next section.
+In this section we are going to register an OAuth2 client that Kratos can use to authenticate users. If you have already registered a client and configured its redirect URI, you can just skip to the next section.
 
 Each external Identity Provider has a different flow for registering a client. A list with instructions for some of the most common Providers can be seen below, if you can’t find your Provider below refer to their documentation.
 
@@ -27,7 +27,7 @@ The `redirect_uri` will be:
 
 To get the `kratos-public-url`, run:
 
-```juju run traefik-public/0 show-proxied-endpoints  | yq '.proxied-endpoints' | jq '.kratos.url'```
+```juju show-unit kratos/leader --endpoint public-route```
 
 The `provider-id` can be anything you want. Every provider that is registered with Kratos needs to have a different `provider-id`. If you don’t provide a `provider-id`, one will be auto-generated.
 

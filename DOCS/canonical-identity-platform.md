@@ -52,11 +52,10 @@ Thinking about using the Canonical Identity Platform for your next project? [Get
 | 2 | how-to/manage-users | [Manage users](/t/15547) |
 | 2 | how-to/link-accounts | [Link accounts](/t/18995) |
 | 1 | reference | Reference |
-| 2 | reference/bundles | Bundles |
 | 2 | reference/self-service-flows | [Self-service flows](/t/15549) |
-| 3 | reference/bundles/identity-platform | [Identity Platform](https://charmhub.io/identity-platform) |
-| 3 | reference/bundles/architecture | [Architecture](/t/11913) |
-| 3 | reference/bundles/login-flow | [Login flow](/t/11914) |
+| 2 | reference/identity-platform | [Identity Platform](https://charmhub.io/identity-platform) |
+| 2 | reference/architecture | [Architecture](/t/11913) |
+| 2 | reference/login-flow | [Login flow](/t/11914) |
 | 2 | reference/observability | Observability setup |
 | 3 | reference/observability/kratos-observability | [Kratos Observability](/t/11931) |
 | 3 | reference/observability/hydra-observability | [Hydra Observability](/t/11930) |
