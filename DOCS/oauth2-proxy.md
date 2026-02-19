@@ -20,9 +20,9 @@ Thinking about using OAuth2 Proxy for your next project? [Get in touch](https://
 
 | Level | Path                                   | Navlink                                                                          |
 | :---- | :------------------------------------- | :------------------------------------------------------------------------------- |
-| 1     | tutorial                               | [Tutorial](/t/TODO-UPDATE)                                                       |
+| 1     | tutorial                               | [Tutorial](/t/19816)                                                       |
 | 1     | how-to                                 | [How-to]()                                                                       |
-| 2     | how-to/integrate-identity-access-proxy | [Integrate your Charmed Operator with Identity and Access Proxy](/t/TODO-UPDATE) |
+| 2     | how-to/integrate-identity-access-proxy | [Integrate your Charmed Operator with Identity and Access Proxy](/t/19821) |
 | 1     | reference                              | [Reference]()                                                                    |
 | 2     | actions                                | [Actions](https://charmhub.io/oauth2-proxy-k8s/actions)                          |
 | 2     | configuration                          | [Configurations](https://charmhub.io/oauth2-proxy-k8s/configurations)            |

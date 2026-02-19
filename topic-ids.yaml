@@ -36,9 +36,9 @@ glauth-utils: 13948
 glauth-utils-tutorial: 13949
 glauth: 13946
 glauth-tutorial: 13947
-oauth2-proxy: <TODO>
-oauth2-proxy-tutorial: <TODO>
-oauth2-proxy-how-to-integrate: <TODO>
+oauth2-proxy: 19817
+oauth2-proxy-tutorial: 19816
+oauth2-proxy-how-to-integrate: 19821
 kratos: 12136
 kratos-tutorial: 14090
 kratos-how-to-use-local-idp: 15548
