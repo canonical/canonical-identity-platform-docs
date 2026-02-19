@@ -8,6 +8,7 @@ canonical-identity-platform-reference-architecture: 11913
 canonical-identity-platform-reference-login-flow: 11914
 # canonical-identity-platform-reference: 11915
 canonical-identity-platform-tutorial-get-started-with-the-canonical-identity-platform: 11916
+canonical-identity-access-proxy-e2e-tutorial: 19816
 canonical-identity-platform-tutorials: 11917
 canonical-identity-platform-reference-hydra-observability: 11930
 canonical-identity-platform-reference-kratos-observability: 11931
@@ -37,7 +38,6 @@ glauth-utils-tutorial: 13949
 glauth: 13946
 glauth-tutorial: 13947
 oauth2-proxy: 19817
-oauth2-proxy-tutorial: 19816
 oauth2-proxy-how-to-integrate: 19821
 kratos: 12136
 kratos-tutorial: 14090
