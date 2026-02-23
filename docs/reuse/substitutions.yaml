@@ -1,0 +1,2 @@
+# Key/value substitutions to use within the Sphinx doc.
+{ juju_documentation_url: "[Juju documentation](https://documentation.ubuntu.com/juju/)"}
