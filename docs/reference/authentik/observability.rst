@@ -41,7 +41,7 @@ All three Authentik operator charms provide identical integration endpoint names
      - Streams distributed tracing spans to Tempo using the OTLP/HTTP protocol (limit: 1 relation).
 
 .. note::
-   Tracing environment variable injection differs across components:
+   All four observability integrations are optional. Tracing environment variable injection differs across components:
    
    * ``authentik-server`` and ``authentik-worker`` inject ``OTEL_EXPORTER_OTLP_ENDPOINT``.
    * ``authentik-ldap-outpost`` injects ``AUTHENTIK_OUTPOST__DISCOVER__OTLP_TRACES_ENDPOINT``.
@@ -117,7 +117,7 @@ The Charmed Authentik suite defines nine charm-specific Prometheus alert rules a
      - The outpost lost its WebSocket connection to the server; policy evaluation and configuration sync will fail.
 
 .. note::
-   Each charm also includes the generic application and scrape alert rules automatically appended by the ``prometheus_scrape`` charm library.
+   Each charm also includes the generic application alert group appended automatically by the ``prometheus_scrape`` charm library.
 
 Loki log alert rules
 --------------------
@@ -126,8 +126,8 @@ All three operator charms include an identical Loki log alert rule:
 
 * **Rule Name**: ``HighFrequencyHighSeverityLog``
 * **Data Source**: Loki
-* **Query Expression**: Counts log entries with severity ``error``, ``fatal``, or ``critical`` within a 5-minute sliding window across JSON-structured logs.
-* **Threshold**: Fires when the count exceeds 100 lines in 5 minutes.
+* **Query Expression**: Counts log entries with severity ``error``, ``fatal``, or ``critical`` within a 5-minute sliding window across JSON-structured logs (tolerating non-JSON lines via ``__error__ != "JSONParserErr"``).
+* **Threshold & Duration**: Fires when the count exceeds 100 lines in 5 minutes (no ``for`` duration clause).
 * **Severity**: ``error``
 * **Description**: Alerts administrators when an application unit experiences an unusually high volume of high-severity error logs, indicating misconfiguration, unhandled exceptions, or crash loops.
 
@@ -136,26 +136,26 @@ Grafana dashboards
 
 Each charm exports a dedicated, pre-configured Grafana dashboard tagged with ``authentik`` and ``identity platform``. The dashboards include template variables for Juju topology filtering (``juju_model``, ``juju_application``, ``juju_unit``) and data source selectors (``prometheusds``, ``lokids``):
 
-1. **Authentik Server Dashboard** (``authentik-server-dashboard``)
+1. **Charmed Authentik Server Operator Dashboard** (``authentik-server-dashboard``)
    
-   * **Availability**: Unit status, container uptime, and process health.
-   * **Logging**: Real-time log streams categorized by log severity.
-   * **HTTP Performance**: Request throughput, response latency histograms, and status code distributions (2xx, 4xx, 5xx).
-   * **Flows and Policies**: Flow execution time, policy evaluation duration, and stage performance.
-   * **Platform**: System resource usage, thread counts, and memory consumption.
+   * **Availability**: Fractional unit availability gauge and list of available units.
+   * **Logging**: High-severity log entries time series (error, fatal, critical) grouped by level.
+   * **HTTP**: Response rate by HTTP status code and 90th percentile request latency by Django view.
+   * **Flows & Policies**: 90th percentile flow plan duration by flow slug, 90th percentile stage execution duration by stage type, and 90th percentile policy engine evaluation duration by object type.
+   * **Platform**: Connected task workers (by version and match state), connected outposts, and queued background tasks.
 
-2. **Authentik Worker Dashboard** (``authentik-worker-dashboard``)
+2. **Charmed Authentik Worker Operator Dashboard** (``authentik-worker-dashboard``)
    
-   * **Availability**: Worker unit status and worker count.
-   * **Logging**: Worker task log streams and error tracking.
-   * **Background Tasks**: Task queue depth, task execution rates, and failure counters.
-   * **Task Performance**: Task duration percentiles by actor/task name.
+   * **Availability**: Fractional unit availability gauge and list of available units.
+   * **Logging**: High-severity log entries time series (error, fatal, critical) grouped by level.
+   * **Background Tasks**: Queued tasks by actor, task completion throughput by actor, and connected task workers.
+   * **Task Performance**: 90th percentile task execution duration by actor, and 90th percentile policy binding execution duration by binding target type.
 
-3. **Authentik LDAP Outpost Dashboard** (``authentik-ldap-outpost-dashboard``)
+3. **Charmed Authentik LDAP Outpost Operator Dashboard** (``authentik-ldap-outpost-dashboard``)
    
-   * **Availability**: Outpost status and WebSocket connection state to the server (``authentik_outpost_connection``).
-   * **Logging**: LDAP bind and search operation logs.
-   * **LDAP Operations**: Request throughput, bind latency, search duration, and rejected requests by reason.
+   * **Availability**: Fractional unit availability gauge and list of available units.
+   * **Logging**: High-severity log entries time series (error, fatal, critical) grouped by level.
+   * **LDAP**: Request rate by operation type, 90th percentile request duration by operation type, rejected requests by reason, and WebSocket connection state to the Authentik server (``authentik_outpost_connection``).
 
 Metric inventory
 ----------------
@@ -188,13 +188,13 @@ The following Prometheus metrics are scraped from the Authentik workload on port
      - Server
      - Execution time histogram for the policy engine partitioned by target ``obj_type``.
    * - ``authentik_policies_execution_time_bucket``
-     - Server
+     - Worker
      - Policy binding execution latency partitioned by ``binding_target_type``.
    * - ``authentik_outposts_connected``
      - Server
      - Gauge showing active connected outposts partitioned by ``outpost`` identifier.
    * - ``authentik_tasks_workers``
-     - Worker
+     - Server, Worker
      - Number of active background workers, labeled with ``version`` and ``version_matched`` (signals version skew between server and worker).
    * - ``authentik_tasks_queued``
      - Server, Worker

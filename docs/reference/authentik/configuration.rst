@@ -273,7 +273,7 @@ Generates a temporary, single-use administrative recovery link bypassing standar
 Resource requirements and sizing
 --------------------------------
 
-Resource requests represent fixed minimum floors enforced by the charms. Setting limits lower than the request floor is rejected or adjusted by the operator framework.
+Resource requests are fixed minimum floors hardcoded in the charms and cannot be changed by configuration. A ``cpu`` or ``memory`` limit set below its request floor is not rejected — it is silently raised to the floor when the patch is applied.
 
 .. list-table::
     :header-rows: 1

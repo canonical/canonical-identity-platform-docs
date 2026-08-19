@@ -60,9 +60,9 @@ Cryptographic entropy
 
 Random strings are generated using cryptographically secure random bytes (``secrets.token_urlsafe``):
 
-* **Secret key and bootstrap token**: ``token_urlsafe(50)`` (~300 bits of entropy).
-* **Bootstrap password and OIDC client secret**: ``token_urlsafe(32)`` (~192 bits of entropy).
-* **OIDC client ID and LDAP bind password**: ``token_urlsafe(16)`` (~96 bits of entropy).
+* **Secret key and bootstrap token**: ``token_urlsafe(50)`` (50 bytes / 400 bits of entropy).
+* **Bootstrap password and OIDC client secret**: ``token_urlsafe(32)`` (32 bytes / 256 bits of entropy).
+* **OIDC client ID and LDAP bind password**: ``token_urlsafe(16)`` (16 bytes / 128 bits of entropy).
 
 .. note::
    Juju secrets created by the charms currently have no automated rotation or expiration policy attached.
@@ -119,6 +119,11 @@ When a client relation is removed (``relation-broken``):
 * Transient network or API errors trigger retries on subsequent reconcile cycles.
 * The application, provider, and outpost objects remain intact to serve remaining clients; only the per-relation user account is deleted.
 
+Least-privilege token delegation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The outpost uses the administrative bootstrap token only during initial setup to provision its provider, application, and outpost objects. It then requests its own Authentik-issued outpost token (via ``/api/v3/core/tokens/<identifier>/view_key/``) and executes the workload exclusively under that token. User renames that would collide with an existing account are refused.
+
 Network architecture and TLS termination
 ----------------------------------------
 
@@ -150,6 +155,7 @@ Trust propagation
 
 * **Inbound traffic**: Consuming applications (OIDC clients, SSSD, browsers) must trust the Root/Intermediate CA that issued Traefik's TLS certificate.
 * **Outbound upstream trust**: The ``authentik-server`` charm provides a ``receive-ca-cert`` endpoint implementing the ``certificate_transfer`` interface. Integrating this endpoint allows Authentik to trust self-signed or enterprise CAs when connecting to upstream identity providers (e.g. corporate Active Directory or Keycloak instances).
+* **Workload isolation**: No charm in the suite provides ``send-ca-cert`` and no charm requires ``tls_certificates``. Workloads remain certificate-free, and all consumer TLS trust must terminate at Traefik.
 
 Compliance and workload hardening
 ---------------------------------
@@ -177,5 +183,7 @@ Administrators should consider the following known architectural limitations and
    Traefik entrypoints for Authentik configure ``proxyProtocol.insecure: true`` and trust private RFC 1918 CIDR blocks (``10.0.0.0/8``, ``172.16.0.0/12``, ``192.168.0.0/16``). Any pod or workload on the internal network sending spoofed PROXY headers could misrepresent its source IP address.
 6. **Container Process Credential Access**:
    Workload credentials and encryption keys are injected into container processes via Pebble environment layers, making them visible to any process running inside the application container.
-7. **Web UI Login Capability for Bind Accounts**:
-   Because LDAP bind accounts are provisioned as standard Authentik users, credentials could theoretically be used to authenticate to the Authentik web portal unless explicit access restrictions are configured upstream.
+7. **Web UI Login for Bind Accounts**:
+   Anyone holding LDAP bind credentials can also log into the Authentik web UI as that account. The account is not a superuser, no charm-provided setting prevents this, and creating the account as a ``service_account`` type would not prevent it either.
+8. **Cached Bind and Search Propagation Delay**:
+   When using default ``cached`` bind or search modes, password changes, group updates, and account deletions in Authentik lag behind until the local outpost cache expires or is invalidated.

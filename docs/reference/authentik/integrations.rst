@@ -282,7 +282,7 @@ Relation databag contracts
       * - Field
         - Description
       * - ``authentik_host``
-        - In-cluster HTTP API URL of the Authentik server (e.g. ``http://authentik-server:9000``).
+        - In-cluster HTTP API URL of the Authentik server (e.g. ``http://<server-app>.<model>.svc.cluster.local:9000``).
       * - ``authentik_token_secret_id``
         - Juju Secret ID holding the administrative API token (key: ``api-token``).
 

@@ -107,6 +107,9 @@ When using an external database connection pooler (such as **PgBouncer** or **Pg
 
 .. code-block:: bash
 
+    # Enable PgBouncer integration on the server (propagated to workers via cluster relation)
+    juju config authentik-server postgresql_use_pgbouncer=true
+
     # Prevent server-side cursors from breaking across multiplexed connections
     juju config authentik-server postgresql_disable_server_side_cursors=true
     juju config authentik-worker postgresql_disable_server_side_cursors=true
@@ -121,7 +124,6 @@ When using an external database connection pooler (such as **PgBouncer** or **Pg
 
     # Reduce worker task polling timeout fallback (replaces PostgreSQL LISTEN/NOTIFY)
     juju config authentik-worker consumer_listen_timeout=5
-
 .. note::
     For full configuration option descriptions, see the :doc:`Configuration reference </reference/authentik/configuration>`.
 
