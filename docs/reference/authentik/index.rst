@@ -13,4 +13,5 @@ Technical reference specifications and contracts for Charmed Authentik.
 
     Configuration <configuration>
     Integrations and contracts <integrations>
+    Observability <observability>
     Charms <charms/index>
