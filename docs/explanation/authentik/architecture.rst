@@ -27,7 +27,7 @@ Core relations overview
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * **``pg-database`` (PostgreSQL client)**: The ``authentik-server`` charm connects to PostgreSQL to run migrations and manage database state. The server acts as the central authority for the database configuration.
-* **``authentik-cluster`` (Server → Worker)**: The server shares the cluster secret key (``AUTHENTIK_SECRET_KEY``) and database connection credentials with the ``authentik-worker`` over the ``authentik-cluster`` relation. The worker has no direct ``pg-database`` relation; all database parameters and credentials are exchanged via Juju Secrets over this interface.
+* **``authentik-cluster`` (Server → Worker)**: The server shares the cluster secret key (``AUTHENTIK_SECRET_KEY``) and database connection credentials with the ``authentik-worker`` over the ``authentik-cluster`` relation. The worker has no direct ``pg-database`` relation; connection parameters (such as host, port, user, and database name) travel in the relation databag, while sensitive credentials (the cluster secret key and database password) are exchanged securely via a granted Juju secret.
 * **``authentik-server-info`` (Server → Outpost)**: Exposes the core server's API URL and an administrative API token to the LDAP Outpost. The token published in the granted Juju secret is the ``akadmin`` bootstrap token, which the outpost uses to provision its provider, application, and outpost objects during initialization. The bootstrap password stays server-local and is never shared over the relation.
 * **``traefik-route`` (Ingress integration)**: Enables the server and outpost to declare custom ingress endpoints, route HTTP and TCP traffic, manage TLS termination, and configure Proxy Protocol header parsing.
 

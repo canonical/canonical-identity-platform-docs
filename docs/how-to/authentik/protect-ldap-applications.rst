@@ -58,8 +58,8 @@ To distribute the CA chain, integrate your consumer client with your certificate
     # Transfer the CA chain to SSSD so it can verify the LDAPS session
     juju integrate sssd:receive-ca-cert self-signed-certificates:send-ca-cert
 
-Behind the scenes: Dynamic service accounts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Behind the scenes: Dynamic bind accounts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This relation triggers the following automated operations:
 

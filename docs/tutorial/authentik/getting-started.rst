@@ -30,7 +30,7 @@ Prerequisites
 
 Before beginning, ensure your environment meets the following baseline:
 
-1. **Terraform CLI** >= 1.6 installed locally (with the Juju provider constraint >= 1.5.0). No custom input variables are required; all variables default to ``{}``.
+1. **Terraform CLI** >= 1.6 installed locally (with the Juju provider constraint >= 1.0). No custom input variables are required; all variables default to ``{}``.
 2. A running **Kubernetes cluster** (e.g., MicroK8s, Charmed Kubernetes).
 3. A **Juju Controller** bootstrapped on your cluster.
 4. Juju CLI and ``kubectl`` configured to access your cluster.

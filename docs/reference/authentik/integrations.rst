@@ -260,7 +260,7 @@ Relation databag contracts
       * - ``db_user``
         - Database username.
       * - ``db_name``
-        - Shared database name (convention: ``<model-name>_<server-app-name>``).
+        - The server requests the database ``authentik`` and forwards the name to workers unchanged.
       * - ``db_read_replicas``
         - Comma-separated ``host:port`` read replica addresses (empty if none).
       * - ``db_use_pgbouncer``
