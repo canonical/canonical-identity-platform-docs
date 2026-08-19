@@ -39,9 +39,15 @@ Technical reference material for the individual charms that make up the Identity
     * - :doc:`OAuth2 Proxy <charms/oauth2-proxy>`
       - Identity and Access Proxy (IAP) for non-OIDC applications.
     * - :doc:`GLAuth <charms/glauth>`
-      - Lightweight LDAP interface for the Identity Platform.
+      - Lightweight LDAP server for development and testing.
     * - :doc:`GLAuth Utils <charms/glauth-utils>`
       - Utility tools for managing the GLAuth interface.
+
+Charmed Authentik
+-----------------
+Technical specifications, configuration parameters, and relation contracts for Charmed Authentik.
+
+* :doc:`Charmed Authentik reference <authentik/index>`
 
 .. toctree::
     :hidden:
@@ -50,3 +56,4 @@ Technical reference material for the individual charms that make up the Identity
     self-service-flows
     canonical-identity-platform-observability
     charms/index
+    authentik/index

@@ -248,6 +248,7 @@ linkcheck_ignore = [
     "https://matrix.to/*",
     "https://developer.hashicorp.com/*",
     "https://www.terraform.io/*",
+    r"https://raw\.githubusercontent\.com/canonical/canonical-identity-platform-docs/main/Diagram_sources/.*",
     ]
 
 

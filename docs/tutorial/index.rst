@@ -21,6 +21,13 @@ Find detailed, component-specific tutorials for the individual charmed operators
 
 - :doc:`Charm-focused tutorials <charms/index>`
 
+Charmed Authentik
+-----------------
+
+Deploy and configure the Charmed Authentik suite.
+
+- :doc:`Charmed Authentik tutorials <authentik/index>`
+
 .. toctree::
     :hidden:
     :maxdepth: 2
@@ -28,3 +35,4 @@ Find detailed, component-specific tutorials for the individual charmed operators
     canonical-identity-platform
     canonical-identity-access-proxy
     charms/index
+    authentik/index

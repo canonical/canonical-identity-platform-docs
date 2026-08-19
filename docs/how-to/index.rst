@@ -38,6 +38,12 @@ Keep your deployment healthy, up-to-date, and observable.
 * :doc:`Integrate with the Canonical Observability Stack (COS) <integrate-with-cos>`
 * :doc:`Perform database migrations <perform-database-migration>`
 
+Charmed Authentik Operations
+----------------------------
+Perform administrative, integration, and maintenance tasks on Charmed Authentik.
+
+* :doc:`Charmed Authentik how-to guides <authentik/index>`
+
 .. toctree::
     :hidden:
     :maxdepth: 1
@@ -52,3 +58,4 @@ Keep your deployment healthy, up-to-date, and observable.
     link-social-accounts
     integrate-with-cos
     perform-database-migration
+    authentik/index

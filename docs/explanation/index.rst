@@ -12,6 +12,8 @@ Core concepts
 -------------
 
 - :doc:`Understanding OAuth 2.0 and OpenID Connect (OIDC) <oauth2-oidc-explained>`
+- :doc:`Choosing an identity solution <choosing-an-identity-solution>`
+- :doc:`Charmed Authentik explanation <authentik/index>`
 
 Security
 --------
@@ -23,3 +25,5 @@ Security
 
     oauth2-oidc-explained
     canonical-identity-platform-security
+    choosing-an-identity-solution
+    authentik/index
