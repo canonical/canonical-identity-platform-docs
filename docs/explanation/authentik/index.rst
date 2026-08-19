@@ -14,3 +14,4 @@ Conceptual architecture, security boundaries, and design documentation for Charm
     :maxdepth: 1
 
     Architecture <architecture>
+    Security architecture <security>
