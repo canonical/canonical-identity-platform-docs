@@ -10,3 +10,7 @@ Technical reference for the individual charmed operators comprising the Charmed 
 
 .. toctree::
     :maxdepth: 1
+
+    authentik-server
+    authentik-worker
+    authentik-ldap-outpost
