@@ -1,0 +1,21 @@
+flowchart TD
+    subgraph CoreModel["Juju 'core' Model (Infrastructure)"]
+        CERT["self-signed-certificates<br>(CA Provider)"]
+        TR["traefik-public<br>(Ingress Controller)"]
+        DB["postgresql-k8s<br>(Database)"]
+
+        TR -- "certificates" --> CERT
+    end
+
+    subgraph AuthModel["Juju 'authentik' Model (Identity Suite)"]
+        S["authentik-server"]
+        W["authentik-worker"]
+        O["authentik-ldap-outpost"]
+
+        S -. "authentik-cluster" .-> W
+        S -. "authentik-server-info" .-> O
+    end
+
+    DB == "pg-database (Cross-Model Offer)" ==> S
+    TR == "traefik-route (Cross-Model Offer)" ==> S
+    TR == "traefik-route (Cross-Model Offer)" ==> O
