@@ -26,7 +26,7 @@ This tutorial assumes you have
 
 * The Terraform CLI. See `Hashicorp | Install Terraform <https://developer.hashicorp.com/terraform/install>`_ (v1.5.0+)
 
-* MinIO Kubernetes Plugin enabled. See more: `Enable MinIO plugin on Microk8s <https://microk8s.io/docs/addon-minio>`_
+* MinIO Kubernetes Plugin enabled. See more: `Enable MinIO plugin on MicroK8s <https://microk8s.io/docs/addon-minio>`_
 
 * MinIO credentials and S3 endpoint necessary to configure Spark History Server.
 

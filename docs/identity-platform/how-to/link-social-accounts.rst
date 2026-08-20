@@ -1,7 +1,7 @@
 .. _link-social-accounts:
 
-Link Accounts
-=============
+Link social or enterprise accounts
+==================================
 
 Account linking allows you to connect your social sign-in accounts (e.g., Google, GitHub)
 to your Identity Platform account as an additional authentication method.

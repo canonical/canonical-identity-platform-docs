@@ -17,9 +17,9 @@ Prerequisites
 
 We are going to assume that:
 
-1. Your charmed application does not support the OAuth 2.0/OIDC protocols (otherwise, refer to `this guide <https://charmhub.io/topics/canonical-identity-platform/how-to/integrate-oidc-compatible-charms>`_ instead).
+1. Your charmed application does not support the OAuth 2.0/OIDC protocols (otherwise, refer to :doc:`integrate-with-oidc-compatible-charms` instead).
 2. Your charmed application supports integration with Charmed Traefik via the ``ingress-per-app`` or ``ingress-per-unit`` interface and provides Charmed OAuth2 Proxy with necessary data by supporting the ``auth_proxy`` interface.
-3. You have deployed the Identity Platform, see `tutorial <https://charmhub.io/topics/canonical-identity-platform/tutorials/e2e-tutorial>`_.
+3. You have deployed the Identity Platform, see :doc:`tutorial </identity-platform/tutorial/canonical-identity-platform>`.
 4. You have deployed your charmed application on Kubernetes.
 
 Initial Deployment State

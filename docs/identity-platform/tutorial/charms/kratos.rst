@@ -8,7 +8,7 @@ This tutorial shows how to set up a fully working kratos server using our charm,
 Set things up
 -------------
 
-Bootstrap a microk8s controller using juju ``3.6`` and create a new Juju model:
+Bootstrap a MicroK8s controller using Juju ``3.6`` and create a new Juju model:
 
 .. code-block:: shell
 
@@ -74,7 +74,7 @@ Grafana, Loki, and Prometheus
 
 The kratos operator integrates with `Canonical Observability Stack <https://charmhub.io/topics/canonical-observability-stack>`_ (COS) bundle.
 It comes with a Grafana dashboard as well as Loki and Prometheus alert rules for basic common scenarios.
-To integrate with the COS bundle, after you `deploy it <https://charmhub.io/topics/canonical-observability-stack/tutorials/install-microk8s#heading--deploy-the-cos-lite-bundle>`_, you can run:
+To integrate with the COS bundle, after you `deploy it <https://charmhub.io/topics/canonical-observability-stack/tutorials/install-microk8s>`_, you can run:
 
 .. code-block:: shell
 
@@ -85,7 +85,7 @@ To integrate with the COS bundle, after you `deploy it <https://charmhub.io/topi
 Tear things down
 ----------------
 
-To tear things down, remove the entire ``kratos`` model in juju with
+To tear things down, remove the entire ``kratos`` model in Juju with
 
 .. code-block:: shell
 

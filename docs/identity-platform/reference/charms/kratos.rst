@@ -3,7 +3,7 @@
 Charmed Kratos
 ==============
 
-``kratos`` is a `Kubernetes charm <https://documentation.ubuntu.com/juju/3.6/explanation/charms-vs-kubernetes-operators/>`_ for `Ory Kratos <https://github.com/ory/kratos>`_, an API-first, headless identity and user management system. It serves as the primary identity provider (IdP) within the `Canonical Identity Platform <https://charmhub.io/topics/canonical-identity-platform>`_.
+``kratos`` is a `Kubernetes charm <https://documentation.ubuntu.com/juju/3.6/explanation/charms-vs-kubernetes-operators/>`_ for `Ory Kratos <https://github.com/ory/kratos>`_, an API-first, headless identity and user management system. It serves as the primary identity provider (IdP) within the :doc:`Canonical Identity Platform </identity-platform/index>`.
 
 The ``kratos`` charmed operator automates the deployment, scaling, and lifecycle management of the Kratos service on `Juju <https://juju.is/>`_. It manages user identities, credentials, and profile data, while orchestrating essential self-service flows such as registration, login, and multi-factor authentication (MFA). 
 

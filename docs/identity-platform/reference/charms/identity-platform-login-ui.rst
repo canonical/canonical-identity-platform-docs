@@ -3,7 +3,7 @@
 Charmed Identity Platform Login UI
 ==================================
 
-``identity-platform-login-ui`` is a `Kubernetes charm <https://documentation.ubuntu.com/juju/3.6/explanation/charms-vs-kubernetes-operators/>`_ for the `Identity Platform Login UI <https://github.com/canonical/identity-platform-login-ui>`_. It serves as the frontend broker for the `Canonical Identity Platform <https://charmhub.io/topics/canonical-identity-platform>`_, providing users with a unified interface for authentication, registration, and account recovery.
+``identity-platform-login-ui`` is a `Kubernetes charm <https://documentation.ubuntu.com/juju/3.6/explanation/charms-vs-kubernetes-operators/>`_ for the `Identity Platform Login UI <https://github.com/canonical/identity-platform-login-ui>`_. It serves as the frontend broker for the :doc:`Canonical Identity Platform </identity-platform/index>`, providing users with a unified interface for authentication, registration, and account recovery.
 
 The Login UI operator facilitates the communication between the user's browser and the backend identity services (like Hydra and Kratos), ensuring a consistent user experience across the entire IAM stack. It handles the rendering of login forms, MFA prompts, and social sign-in buttons while abstracting the underlying protocol complexity from the end user. 
 

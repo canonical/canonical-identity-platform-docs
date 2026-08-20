@@ -30,5 +30,5 @@ Kratos charm uses the following cryptography packages:
 
 * Python secrets built-in library is used to generate Kratos cookie secret.
 
-Kratos depends on `ca-certificates dpkg package <https://code.launchpad.net/ubuntu/+source/ca-certificates>`_,
-which is `based <https://git.launchpad.net/ubuntu/+source/ca-certificates/tree/mozilla/Makefile>`_ on Mozilla certificate bundle.
+Kratos depends on `ca-certificates dpkg package <https://launchpad.net/ubuntu/+source/ca-certificates>`_,
+which is based on the Mozilla certificate bundle.

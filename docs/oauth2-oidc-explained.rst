@@ -128,9 +128,12 @@ Why Use OIDC?
 * **Security**: Uses cryptographic mechanisms to ensure token integrity.
 * **Seamless User Experience**: Enables SSO across multiple applications.
 
-Implementing OIDC with Canonical Identity Platform
---------------------------------------------------
+Implementing OIDC with Canonical Identity Solutions
+---------------------------------------------------
 
-The `Canonical Identity Platform <https://charmhub.io/topics/canonical-identity-platform>`_ provides a robust OIDC implementation, enabling secure authentication and authorization for your applications. With support for modern identity standards, it ensures seamless user authentication across cloud-native and enterprise environments.
+Canonical provides two identity solutions supporting OpenID Connect and OAuth 2.0:
 
-To get started, refer to the official documentation and integration guides available.
+* :doc:`Canonical Identity Platform <identity-platform/index>`: An Ory-based stack engineered for high-scale OIDC workloads and customizable login flows.
+* :doc:`Charmed Authentik <authentik/index>`: A unified IdP and directory gateway uniting OIDC and LDAP protocol support.
+
+To choose the right solution for your infrastructure, see :doc:`Choosing an identity solution <choosing-an-identity-solution>`.

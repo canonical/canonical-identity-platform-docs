@@ -3,7 +3,7 @@
 Integrate with the Canonical Observability Stack (COS)
 =============================================================
 
-This document shows how to integrate the different components of the `Canonical Identity platform <https://charmhub.io/topics/canonical-identity-platform>`_ with the `Canonical Observability Stack (COS) <https://charmhub.io/topics/canonical-observability-stack>`_ to enable the pre-configured dashboards and alerting rules.
+This document shows how to integrate the different components of the :doc:`Canonical Identity Platform </identity-platform/index>` with the `Canonical Observability Stack (COS) <https://charmhub.io/topics/canonical-observability-stack>`_ to enable the pre-configured dashboards and alerting rules.
 
 The Canonical Observability Stack (`COS-Lite <https://charmhub.io/topics/canonical-observability-stack>`_) is a Juju bundle that includes a series of open source observability applications and related automation. For the complete list of components in the COS, read the `Component List <https://charmhub.io/topics/canonical-observability-stack/editions/lite>`_.
 
@@ -115,7 +115,7 @@ Assuming you deployed the COS-Lite bundle in model ``cos-model`` with user ``adm
 Access the dashboards
 ---------------------
 
-You can get the Grafana IP address with the `juju status <https://juju.is/docs/juju/status>`_ command. The default port for the Grafana HTTP server is ``3000``.
+You can get the Grafana IP address with the `Juju status <https://juju.is/docs/juju/status>`_ command. The default port for the Grafana HTTP server is ``3000``.
 
 The default credentials are:
 

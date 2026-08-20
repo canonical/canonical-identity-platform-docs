@@ -51,7 +51,7 @@ You will need to create a confidential client in Azure AD and retrieve the clien
 Once the client is registered, create a secret.
 
 .. note::
-    See more: `Microsoft | Azure Register a new application > Certificates & Secrets <https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#certificates--secrets>`_
+    See more: `Microsoft | Azure Register a new application <https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application>`_
 
 
 You then need to retrieve the tenant_id.
@@ -62,7 +62,7 @@ You then need to retrieve the tenant_id.
 Google
 ^^^^^^
 
-To create a confidential client in Google follow the instructions found in the `Google documentation <https://developers.google.com/identity/protocols/oauth2#1.-obtain-oauth-2.0-credentials-from-the-dynamic_data.setvar.console_name.>`_.
+To create a confidential client in Google follow the instructions found in the `Google documentation <https://developers.google.com/identity/protocols/oauth2>`_.
 
 GitHub
 ^^^^^^

@@ -715,7 +715,7 @@ Congratulations, your GitHub users and locally created accounts can now access y
 
 .. note::
 
-    See more: `Charmhub | Identity Plaform <https://charmhub.io/identity-platform>`_
+    See more: `Charmhub | Identity Platform <https://charmhub.io/identity-platform>`_
 
 Tear things down
 ----------------

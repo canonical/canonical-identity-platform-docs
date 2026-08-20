@@ -45,7 +45,7 @@ The Canonical Identity Platform leverages Juju relations and configs to simplify
 
     * Services can relate to Charmed OpenFGA to query permissions (e.g., "Can User A view Document B?") and store relationship tuples, decoupling authorization logic from application code.
 
-* **Kratos External IdP Integrator** (via juju config):
+* **Kratos External IdP Integrator** (via Juju config):
     This interface manages the upstream connections when the platform acts as an identity broker.
 
     * By deploying an instance of the Integrator charm and setting the ``juju config``, you can dynamically register external identity providers.

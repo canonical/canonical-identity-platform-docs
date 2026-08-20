@@ -12,7 +12,7 @@ Identity Provider Configuration
 -------------------------------
 Configure how users authenticate with your platform, whether using local accounts or external social/enterprise providers.
 
-* :doc:`Use the local identity provider <use-local-identity-provider>`
+* :doc:`Use the Kratos local identity provider <use-local-identity-provider>`
 * :doc:`Manage external identity providers <manage-external-identity-providers>`
 
 Application Onboarding
@@ -20,9 +20,9 @@ Application Onboarding
 Integrate your applications and services with the Identity Platform.
 
 * :doc:`Onboard an application with Charmed Hydra <onboard-an-application-with-charmed-hydra>`
-* :doc:`Integrate with OIDC-compliant charms <integrate-with-oidc-compatible-charms>`
-* :doc:`Integrate with the Identity and Access Proxy (OAuth2 Proxy) <integrate-with-oauth2-proxy>`
-* :doc:`Integrate with OpenFGA for authorization <integrate-with-openfga>`
+* :doc:`Integrate your OIDC-compatible charm <integrate-with-oidc-compatible-charms>`
+* :doc:`Integrate your charm with Identity and Access Proxy <integrate-with-oauth2-proxy>`
+* :doc:`Integrate with OpenFGA <integrate-with-openfga>`
 
 User & Account Operations
 -------------------------
@@ -36,7 +36,7 @@ Maintenance & Monitoring
 Keep your deployment healthy, up-to-date, and observable.
 
 * :doc:`Integrate with the Canonical Observability Stack (COS) <integrate-with-cos>`
-* :doc:`Perform database migrations <perform-database-migration>`
+* :doc:`Perform database migration <perform-database-migration>`
 
 .. toctree::
     :hidden:

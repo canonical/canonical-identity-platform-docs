@@ -3,7 +3,7 @@
 Charmed Hydra
 =============
 
-``hydra`` is a `Kubernetes charm <https://documentation.ubuntu.com/juju/3.6/explanation/charms-vs-kubernetes-operators/>`_ for `Ory Hydra <https://github.com/ory/hydra>`_, the cloud-native, high-performance OAuth 2.0 and OpenID Connect (OIDC) server. It is a core component of the `Canonical Identity Platform <https://charmhub.io/topics/canonical-identity-platform>`_.
+``hydra`` is a `Kubernetes charm <https://documentation.ubuntu.com/juju/3.6/explanation/charms-vs-kubernetes-operators/>`_ for `Ory Hydra <https://github.com/ory/hydra>`_, the cloud-native, high-performance OAuth 2.0 and OpenID Connect (OIDC) server. It is a core component of the :doc:`Canonical Identity Platform </identity-platform/index>`.
 
 The ``hydra`` charmed operator simplifies the operational complexity of deploying, scaling, and managing an OIDC server on top of `Juju <https://juju.is/>`_. It provides a secure, standards-compliant way to issue access, refresh, and ID tokens, allowing you to manage who can access your applications and what they can do.
 
