@@ -5,7 +5,7 @@ Charmed OAuth2 Proxy
 
 ``oauth2-proxy-k8s`` is a `Kubernetes charm <https://documentation.ubuntu.com/juju/3.6/explanation/charms-vs-kubernetes-operators/>`_ for `OAuth2 Proxy <https://oauth2-proxy.github.io/oauth2-proxy/>`_ — a Cloud Native Computing Foundation (CNCF) Sandbox project.
 
-It acts as a reverse proxy and static file server that provides authentication using providers like Google, GitHub, or other OIDC-compliant services. Within the `Canonical Identity Platform <https://charmhub.io/topics/canonical-identity-platform>`_, it functions as an Identity and Access Proxy (IAP), allowing you to protect legacy or non-OIDC applications by validating users based on email, domain, or group membership.
+It acts as a reverse proxy and static file server that provides authentication using providers like Google, GitHub, or other OIDC-compliant services. Within the :doc:`Canonical Identity Platform </identity-platform/index>`, it functions as an Identity and Access Proxy (IAP), allowing you to protect legacy or non-OIDC applications by validating users based on email, domain, or group membership.
 
 The charmed operator simplifies the deployment, scaling, and configuration of OAuth2 Proxy on top of `Juju <https://juju.is/>`_.
 

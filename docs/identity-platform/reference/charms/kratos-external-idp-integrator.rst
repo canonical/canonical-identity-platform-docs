@@ -4,7 +4,7 @@ Charmed Kratos External IDP Integrator
 ======================================
 
 ``kratos-external-idp-integrator`` is a `Kubernetes charm <https://documentation.ubuntu.com/juju/3.6/explanation/charms-vs-kubernetes-operators/>`_ for `kratos-external-idp-integrator <https://github.com/canonical/kratos-external-idp-integrator>`_.
-It is maintained as a part of the `Canonical Identity Platform <https://charmhub.io/topics/canonical-identity-platform>`_.
+It is maintained as a part of the :doc:`Canonical Identity Platform </identity-platform/index>`.
 
 This operator automates the complex configuration required to link `Charmed Kratos <https://charmhub.io/kratos>`_ with external OpenID Connect (OIDC) providers like Google, Microsoft Entra ID, or GitHub.
 It handles the secure exchange of client credentials, enabling a seamless "Login with..." experience for end users.

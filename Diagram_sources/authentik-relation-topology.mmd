@@ -1,0 +1,28 @@
+flowchart TD
+    subgraph JujuModel["Charmed Authentik K8s Model"]
+        S["authentik-server-operator<br>(API Server)"]
+        W["authentik-worker-operator<br>(Asynchronous Worker)"]
+        O["authentik-ldap-outpost-operator<br>(LDAP/LDAPS Outpost)"]
+
+        S -. "authentik-cluster" .-> W
+        S -. "authentik-server-info" .-> O
+    end
+
+    DB[("Charmed PostgreSQL K8s")]
+    ING["Traefik K8s Ingress Controller<br>(Load Balancer / Ingress)"]
+    COS["Canonical Observability Stack<br>(Loki, Prometheus, Grafana, Tempo)"]
+
+    CLIENTS_WEB["Web / OIDC Clients<br>(Grafana, GitLab)"]
+    CLIENTS_LDAP["LDAP / LDAPS Clients<br>(SSSD, PAM, Legacy Apps)"]
+
+    S == "pg-database" ==> DB
+
+    CLIENTS_WEB -- "HTTPS:443" --> ING
+    ING -- "traefik-route" --> S
+
+    CLIENTS_LDAP -- "LDAPS:636<br>(Proxy Protocol v2)" --> ING
+    ING -- "traefik-route" --> O
+
+    S -. "observability" .-> COS
+    W -. "observability" .-> COS
+    O -. "observability" .-> COS

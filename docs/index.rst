@@ -6,7 +6,10 @@ provided by Canonical. It is designed to be a highly modular, secure, and scalab
 ecosystem that provides centralized authentication, authorization, and access
 governance controls across diverse infrastructures.
 
-.. grid:: 1 1 1 1
+Choose your solution
+--------------------
+
+.. grid:: 1 1 2 2
 
     .. grid-item-card:: Canonical Identity Platform
         :link: identity-platform/index
@@ -14,7 +17,15 @@ governance controls across diverse infrastructures.
 
         **Ory-based IAM stack** - Cloud-native identity platform engineered for high-scale OpenID Connect and OAuth 2.0 workloads.
 
-New to identity protocols? Read
+    .. grid-item-card:: Charmed Authentik
+        :link: authentik/index
+        :link-type: doc
+
+        **Unified IdP & LDAP gateway** - Versatile identity provider and directory gateway uniting OIDC and LDAP protocol support.
+
+Unsure which solution fits your use case? Read
+:doc:`Choosing an identity solution <choosing-an-identity-solution>` for a
+side-by-side comparison. New to identity protocols? Start with
 :doc:`Understanding OAuth 2.0 and OpenID Connect (OIDC) <oauth2-oidc-explained>`.
 
 .. toctree::
@@ -22,4 +33,6 @@ New to identity protocols? Read
     :maxdepth: 2
 
     Canonical Identity Platform <identity-platform/index>
+    Charmed Authentik <authentik/index>
+    choosing-an-identity-solution
     oauth2-oidc-explained

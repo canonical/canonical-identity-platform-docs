@@ -44,7 +44,7 @@ Granular `Relationship-based access control <https://en.wikipedia.org/wiki/Relat
 Identity management
 ~~~~~~~~~~~~~~~~~~~
 
-Canonical Identity Platform is a composable identity broker and identity provider. Identity management is possible via `integration with external identity providers <https://charmhub.io/topics/canonical-identity-platform/how-to/integrate-external-identity-provider>`_ or by using `Local Identity Provider in Identity Platform <https://charmhub.io/topics/canonical-identity-platform/how-to/use-local-identity-provider>`_.
+Canonical Identity Platform is a composable identity broker and identity provider. Identity management is possible via :doc:`integration with external identity providers </identity-platform/how-to/manage-external-identity-providers>` or by using :doc:`Local Identity Provider in Identity Platform </identity-platform/how-to/use-local-identity-provider>`.
 
 Observability
 ~~~~~~~~~~~~~
@@ -81,7 +81,7 @@ Implement Monitoring, Logging and Alerting
 
 Regularly review system logs to detect anomalies and implement alerts for critical events such as failed login attempts, privilege escalations, or configuration changes.
 
-Integrate with `Canonical Observability Stack <https://charmhub.io/topics/canonical-identity-platform/how-to/integrate-cos>`__ to start using monitoring, logging and alerting based on open source `components <https://charmhub.io/topics/canonical-observability-stack/editions/lite>`_ such as Grafana, Prometheus and Alertmanager.
+Integrate with :doc:`Canonical Observability Stack </identity-platform/how-to/integrate-with-cos>` to start using monitoring, logging and alerting based on open source `components <https://charmhub.io/topics/canonical-observability-stack/editions/lite>`_ such as Grafana, Prometheus and Alertmanager.
 
 Cryptographic tech in Canonical Identity Platform
 -------------------------------------------------
