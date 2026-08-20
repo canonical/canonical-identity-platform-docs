@@ -1,12 +1,12 @@
 .. meta::
-    :description: Comparison and selection guide to choose between the Canonical Identity Platform, Charmed Authentik, and GLAuth.
+    :description: Comparison and selection guide to choose between Charmed Authentik, Canonical Identity Platform, and GLAuth for enterprise and consumer identity use cases.
 
 .. _choosing-an-identity-solution:
 
 Choosing an identity solution
 =============================
 
-Canonical Identity offers multiple identity and access management solutions to address different architectural requirements, protocol needs, and deployment scales.
+Canonical Identity offers identity and access management solutions tailored to enterprise identity and consumer identity architectures.
 
 Overview of options
 -------------------
@@ -15,42 +15,36 @@ Overview of options
     :header-rows: 1
     :widths: 50 50
 
-    * - If you need
+    * - Use case & requirements
       - Recommended solution
-    * - OIDC or OAuth2 only
-      - :doc:`Canonical Identity Platform <identity-platform/index>` (Ory stack)
-    * - The highest scalability
-      - :doc:`Canonical Identity Platform <identity-platform/index>` (Ory stack)
-    * - A deeply customizable login experience or custom authentication flow steps
-      - :doc:`Canonical Identity Platform <identity-platform/index>` (Ory stack)
-    * - An all-in-one identity provider with a built-in administrative console
+    * - **Enterprise Identity**: Unified Single Sign-On (SSO), LDAP and SAML protocol bridging, Active Directory synchronization, and built-in administration console
       - :doc:`Charmed Authentik <authentik/index>`
-    * - LDAP, SAML and OIDC from one control plane
-      - :doc:`Charmed Authentik <authentik/index>`
-    * - Lightweight LDAP for development and testing
+    * - **Consumer Identity**: Cloud-native high-scale OIDC and OAuth 2.0 workloads, customizable login journeys, and independent component scaling
+      - :doc:`Canonical Identity Platform <identity-platform/index>` (Ory stack)
+    * - **Development & Testing**: Lightweight read-only LDAP endpoint for local prototyping and staging environments
       - :doc:`GLAuth </identity-platform/reference/charms/glauth>` (Identity Platform component)
 
-Canonical Identity Platform
----------------------------
+Enterprise Identity with Charmed Authentik
+------------------------------------------
 
-The :doc:`Canonical Identity Platform <identity-platform/index>` (built on the Ory open-source stack including Kratos and Hydra) is Canonical's flagship identity solution. It is designed for cloud-native environments requiring high scalability, granular self-service user flows, and enterprise-grade OpenID Connect (OIDC) and OAuth 2.0 authentication and authorization. Each component is a stateless service that scales horizontally and independently, so the parts of the platform under load can be scaled without scaling the rest.
+:doc:`Charmed Authentik <authentik/index>` is the recommended solution for enterprise identity and access management. It provides an all-in-one identity provider (IdP) and directory gateway uniting modern OpenID Connect (OIDC) authentication with legacy LDAP protocols and Active Directory synchronization under a single control plane.
 
-The platform is also the more customizable of the two solutions. Its login interface is developed by Canonical rather than inherited from an upstream product, and the underlying self-service flows expose integration hooks, so the login journey can be tailored end to end — from branding to entirely custom authentication and verification steps.
+Authentik is managed through a built-in administrative console where authentication flows, stages, policies, and property mappings can be configured without code. This provides operators with a straightforward deployment footprint and a rich day-2 operations interface out of the box.
 
-Choose the Canonical Identity Platform when your infrastructure relies primarily on modern web and API authentication protocols (OIDC and OAuth 2.0), needs to scale horizontally to accommodate large user bases and high request volumes, or requires a login experience tailored beyond what configuration alone can achieve.
+Choose Charmed Authentik when you need to serve internal business applications, provide SSO for services like Grafana, synchronize existing Active Directory domains, or bridge legacy LDAP-dependent systems (such as Linux PAM or SSSD).
 
-Charmed Authentik
------------------
+Consumer Identity with Canonical Identity Platform
+--------------------------------------------------
 
-:doc:`Charmed Authentik <authentik/index>` provides an all-in-one identity provider (IdP) and directory gateway. While the Canonical Identity Platform focuses on OIDC and OAuth 2.0, it does not provide an integrated LDAP bridge. Charmed Authentik fills this gap by providing both an LDAP provider (via the Authentik LDAP Outpost) and an LDAP source for directory synchronization.
+The :doc:`Canonical Identity Platform <identity-platform/index>` (built on the Ory open-source stack including Kratos and Hydra) is engineered for high-scale, cloud-native consumer identity and API authentication workloads. Each component is a stateless service that scales horizontally and independently, allowing high-traffic authentication endpoints to scale without over-provisioning other subsystems.
 
-Authentik is configured through its built-in administrative console: authentication flows, stages, policies, and property mappings can all be changed without code. This makes it highly configurable and gives operators a rich day-2 interface out of the box, with a simpler deployment footprint than the platform. Deep changes to the login interface itself are limited to theming, since that interface is part of upstream Authentik.
+The platform provides granular control over user-facing authentication flows. Its login interface is developed by Canonical and exposes extensible self-service hooks, allowing end-to-end customization of branding, registration, verification, and multi-factor authentication steps.
 
-Choose Charmed Authentik when you need to serve both modern OIDC applications and legacy LDAP-oriented consumers (such as Linux PAM, SSSD, or legacy enterprise software) from a single unified control plane, or when integrating Active Directory as an upstream directory source.
+Choose the Canonical Identity Platform when building customer-facing web and mobile applications that require horizontal scalability for large user bases, API-first architecture, or bespoke authentication journeys tailored beyond standard configuration templates.
 
-GLAuth (LDAP for development and testing)
------------------------------------------
+Development LDAP with GLAuth
+----------------------------
 
 :doc:`GLAuth </identity-platform/reference/charms/glauth>` is a lightweight, read-only LDAP server interface included as a component of the Canonical Identity Platform stack. It provides a simple LDAP endpoint suitable for local development, integration testing, and lightweight staging environments.
 
-GLAuth is not intended as a full-featured production LDAP bridge. For production directory integration and unified protocol support, use Charmed Authentik.
+GLAuth is not intended as a production directory bridge. For enterprise directory integration, protocol bridging, and unified user management, use Charmed Authentik.

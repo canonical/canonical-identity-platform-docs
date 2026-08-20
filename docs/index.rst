@@ -26,7 +26,7 @@ Choose your solution
 Unsure which solution fits your use case? Read
 :doc:`Choosing an identity solution <choosing-an-identity-solution>` for a
 side-by-side comparison. New to identity protocols? Start with
-:doc:`Understanding OAuth 2.0 and OpenID Connect (OIDC) <oauth2-oidc-explained>`.
+:doc:`Understanding OAuth 2.0 and OpenID Connect (OIDC) <identity-platform/explanation/oauth2-oidc-explained>`.
 
 .. toctree::
     :hidden:
@@ -35,4 +35,3 @@ side-by-side comparison. New to identity protocols? Start with
     Canonical Identity Platform <identity-platform/index>
     Charmed Authentik <authentik/index>
     choosing-an-identity-solution
-    oauth2-oidc-explained

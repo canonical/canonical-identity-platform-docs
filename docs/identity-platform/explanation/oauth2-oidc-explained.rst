@@ -133,7 +133,7 @@ Implementing OIDC with Canonical Identity Solutions
 
 Canonical provides two identity solutions supporting OpenID Connect and OAuth 2.0:
 
-* :doc:`Canonical Identity Platform <identity-platform/index>`: An Ory-based stack engineered for high-scale OIDC workloads and customizable login flows.
-* :doc:`Charmed Authentik <authentik/index>`: A unified IdP and directory gateway uniting OIDC and LDAP protocol support.
+* :doc:`Canonical Identity Platform </identity-platform/index>`: An Ory-based stack engineered for high-scale OIDC workloads and customizable login flows.
+* :doc:`Charmed Authentik </authentik/index>`: A unified IdP and directory gateway uniting OIDC and LDAP protocol support.
 
-To choose the right solution for your infrastructure, see :doc:`Choosing an identity solution <choosing-an-identity-solution>`.
+To choose the right solution for your infrastructure, see :doc:`Choosing an identity solution </choosing-an-identity-solution>`.
