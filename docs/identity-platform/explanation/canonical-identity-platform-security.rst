@@ -93,11 +93,11 @@ Explore the detailed security technical references for each charm below:
    :maxdepth: 1
    :glob:
 
-   /explanation/hydra-security
-   /explanation/kratos-security
-   /explanation/openfga-security
-   /explanation/identity-platform-login-ui-security
-   /explanation/kratos-external-idp-integrator-security
+   hydra-security
+   kratos-security
+   openfga-security
+   identity-platform-login-ui-security
+   kratos-external-idp-integrator-security
 
 Reporting Security Issues
 -------------------------

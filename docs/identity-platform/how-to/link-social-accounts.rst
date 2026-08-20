@@ -11,7 +11,7 @@ Prerequisites
 -------------
 
 Account linking is available only if the **built-in identity provider** is enabled in the Identity Platform.
-For more details, refer to :doc:`this guide </how-to/use-local-identity-provider>`.
+For more details, refer to :doc:`this guide </identity-platform/how-to/use-local-identity-provider>`.
 
 Linking a Social Sign-In Account
 --------------------------------
@@ -30,7 +30,7 @@ Unlinking a Social Sign-In Account
 
 You can unlink a linked account directly from the **Connected accounts** page in a self-service manner.
 You can also unlink accounts using a **Juju action** in Charmed Kratos.
-For detailed steps, see the :doc:`How to manage users guide </how-to/manage-users>`.
+For detailed steps, see the :doc:`How to manage users guide </identity-platform/how-to/manage-users>`.
 
 Limitations
 -----------

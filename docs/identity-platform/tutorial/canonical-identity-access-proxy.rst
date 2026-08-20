@@ -628,7 +628,7 @@ and their charmed dependencies.
 
 This process can take several minutes, depending on your hardware and network speed.
 
-The ``iam`` model contains all the crucial identity applications, as explained in the :doc:`Canonical Identity Platform architecture </reference/canonical-identity-platform-architecture>`.
+The ``iam`` model contains all the crucial identity applications, as explained in the :doc:`Canonical Identity Platform architecture </identity-platform/reference/canonical-identity-platform-architecture>`.
 And the ``core`` model contains all of their shared dependencies:
 
 - `Charmed Postgresql <https://charmhub.io/postgresql>`_: the SQL database of choice
@@ -709,7 +709,7 @@ Open the link, confirm the recovery code, and set a password for your account. C
 
 .. note::
 
-    Learn how to set up external identity providers in :doc:`this guide </how-to/manage-external-identity-providers>`.
+    Learn how to set up external identity providers in :doc:`this guide </identity-platform/how-to/manage-external-identity-providers>`.
 
 Integrate Identity and Access Proxy with Spark History Server
 -------------------------------------------------------------

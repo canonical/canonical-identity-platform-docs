@@ -24,10 +24,10 @@ Explore the detailed technical references for each charm below:
    :maxdepth: 1
    :glob:
 
-   /reference/hydra-observability
-   /reference/kratos-observability
-   /reference/login-ui-observability
-   /reference/openfga-observability
+   hydra-observability
+   kratos-observability
+   login-ui-observability
+   openfga-observability
 
 Common Alert Severities
 -----------------------

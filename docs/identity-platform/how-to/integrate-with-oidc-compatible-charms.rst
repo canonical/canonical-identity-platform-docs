@@ -5,7 +5,7 @@ Integrate your OIDC-compatible charm
 
 The Identity Platform provides seamless integration with your OIDC compatible charms using the power of juju relations. We are going to assume that:
 
-1. You have deployed the :doc:`Identity Platform </tutorial/canonical-identity-platform>`.
+1. You have deployed the :doc:`Identity Platform </identity-platform/tutorial/canonical-identity-platform>`.
 2. You have deployed an OIDC compatible charmed application.
 
 To connect an OIDC compatible charmed application with the Identity Platform, integrate it with ``hydra``:

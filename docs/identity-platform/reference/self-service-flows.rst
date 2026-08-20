@@ -53,4 +53,4 @@ Find out more about the login flow:
    :maxdepth: 1
    :glob:
 
-   /reference/self-service-flows-*
+   self-service-flows-*

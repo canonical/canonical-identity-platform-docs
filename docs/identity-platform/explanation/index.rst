@@ -11,7 +11,7 @@ Discussion and clarification of key topics related to Identity Platform, includi
 Core concepts
 -------------
 
-- :doc:`Understanding OAuth 2.0 and OpenID Connect (OIDC) <oauth2-oidc-explained>`
+- :doc:`Understanding OAuth 2.0 and OpenID Connect (OIDC) <../../oauth2-oidc-explained>`
 
 Security
 --------
@@ -21,5 +21,4 @@ Security
 .. toctree::
     :hidden:
 
-    oauth2-oidc-explained
     canonical-identity-platform-security

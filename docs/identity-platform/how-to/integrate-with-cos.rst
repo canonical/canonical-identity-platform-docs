@@ -11,7 +11,7 @@ Prerequisites
 -------------
 
 * A running `COS-Lite <https://charmhub.io/topics/canonical-observability-stack>`_ bundle. You can follow the `Getting started on MicroK8s <https://charmhub.io/topics/canonical-observability-stack/tutorials/install-microk8s>`_ tutorial to get you started. Make sure to follow the section **Deploy the COS Lite** bundle with overlays sections.
-* A running Canonical Identity Platform. Please refer to the :doc:`tutorial </tutorial/canonical-identity-platform>`.
+* A running Canonical Identity Platform. Please refer to the :doc:`tutorial </identity-platform/tutorial/canonical-identity-platform>`.
 
 It is generally recommended to keep the observability stack separate from any observed applications to separate failure domains. This document assumes that the Identity Platform and the COS bundles are deployed to different models.
 
@@ -124,4 +124,4 @@ The default credentials are:
 
 Once logged in, you will see a vertical menu bar on the left side of the page. You will find the available alerts by clicking on the **Alerting** menu and the dashboards under the **Dashboards** menu.
 
-You can find a technical description of the observability setup in the related :doc:`reference section </reference/canonical-identity-platform-observability>` of the docs.
+You can find a technical description of the observability setup in the related :doc:`reference section </identity-platform/reference/canonical-identity-platform-observability>` of the docs.

@@ -195,4 +195,4 @@ Self-service flows
 ------------------
 
 The Identity Platform implements flows that users can perform on their own instead of waiting for administrative intervention.
-See the :doc:`self-service flows reference </reference/self-service-flows>` for more details.
+See the :doc:`self-service flows reference </identity-platform/reference/self-service-flows>` for more details.

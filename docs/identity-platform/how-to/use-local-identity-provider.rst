@@ -66,5 +66,5 @@ You can enable that feature by running:
 User management
 ---------------
 
-Please refer to the :doc:`user management guide </how-to/manage-users>` to learn how to create, update, or delete users
+Please refer to the :doc:`user management guide </identity-platform/how-to/manage-users>` to learn how to create, update, or delete users
 and perform common identity management tasks.

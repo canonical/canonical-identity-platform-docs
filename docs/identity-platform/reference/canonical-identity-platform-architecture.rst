@@ -51,4 +51,4 @@ The Canonical Identity Platform leverages Juju relations and configs to simplify
     * By deploying an instance of the Integrator charm and setting the ``juju config``, you can dynamically register external identity providers.
     * Multiple providers can be supported simultaneously by deploying multiple instances of the Integrator charm.
 
-Interested in learning how to integrate your application with the Canonical Identity Platform? Check our :doc:`how-to guides </how-to/index>`.
+Interested in learning how to integrate your application with the Canonical Identity Platform? Check our :doc:`how-to guides </identity-platform/how-to/index>`.
