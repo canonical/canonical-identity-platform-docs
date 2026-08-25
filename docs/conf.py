@@ -158,7 +158,7 @@ html_extra_path = []
 # Allow opt-in build of the OpenAPI "Hello" example so docs stay clean by default.
 if os.getenv("OPENAPI", ""):
     tags.add("openapi")
-    html_extra_path.append("how-to/assets/openapi.yaml")
+    html_extra_path.append("identity-platform/how-to/assets/openapi.yaml")
 
 # TODO: To enable the edit button on pages, uncomment and change the link to a
 # public repository on GitHub or Launchpad. Any of the following link domains
@@ -232,6 +232,58 @@ sitemap_excludes = [
 #     'reference/style-guide-myst/': '../myst-syntax-reference',
 #     'reference/style-guide/': '../rst-syntax-reference',
 # }
+
+# Every page moved under identity-platform/ (or to the root, for the shared
+# OAuth2/OIDC explanation) keeps a redirect stub at its old URL.
+redirects = {
+    "explanation/canonical-identity-platform-security": "../../identity-platform/explanation/canonical-identity-platform-security/",
+    "explanation/hydra-security": "../../identity-platform/explanation/hydra-security/",
+    "explanation/identity-platform-login-ui-security": "../../identity-platform/explanation/identity-platform-login-ui-security/",
+    "explanation/index": "../identity-platform/explanation/",
+    "explanation/kratos-external-idp-integrator-security": "../../identity-platform/explanation/kratos-external-idp-integrator-security/",
+    "explanation/kratos-security": "../../identity-platform/explanation/kratos-security/",
+    "explanation/oauth2-oidc-explained": "../../identity-platform/explanation/oauth2-oidc-explained/",
+    "oauth2-oidc-explained": "identity-platform/explanation/oauth2-oidc-explained/",
+    "explanation/openfga-security": "../../identity-platform/explanation/openfga-security/",
+    "how-to/index": "../identity-platform/how-to/",
+    "how-to/integrate-with-cos": "../../identity-platform/how-to/integrate-with-cos/",
+    "how-to/integrate-with-oauth2-proxy": "../../identity-platform/how-to/integrate-with-oauth2-proxy/",
+    "how-to/integrate-with-oidc-compatible-charms": "../../identity-platform/how-to/integrate-with-oidc-compatible-charms/",
+    "how-to/integrate-with-openfga": "../../identity-platform/how-to/integrate-with-openfga/",
+    "how-to/link-social-accounts": "../../identity-platform/how-to/link-social-accounts/",
+    "how-to/manage-external-identity-providers": "../../identity-platform/how-to/manage-external-identity-providers/",
+    "how-to/manage-users": "../../identity-platform/how-to/manage-users/",
+    "how-to/onboard-an-application-with-charmed-hydra": "../../identity-platform/how-to/onboard-an-application-with-charmed-hydra/",
+    "how-to/perform-database-migration": "../../identity-platform/how-to/perform-database-migration/",
+    "how-to/use-local-identity-provider": "../../identity-platform/how-to/use-local-identity-provider/",
+    "reference/canonical-identity-platform-architecture": "../../identity-platform/reference/canonical-identity-platform-architecture/",
+    "reference/canonical-identity-platform-observability": "../../identity-platform/reference/canonical-identity-platform-observability/",
+    "reference/charms/glauth": "../../../identity-platform/reference/charms/glauth/",
+    "reference/charms/glauth-utils": "../../../identity-platform/reference/charms/glauth-utils/",
+    "reference/charms/hydra": "../../../identity-platform/reference/charms/hydra/",
+    "reference/charms/identity-platform-login-ui": "../../../identity-platform/reference/charms/identity-platform-login-ui/",
+    "reference/charms/index": "../../identity-platform/reference/charms/",
+    "reference/charms/kratos": "../../../identity-platform/reference/charms/kratos/",
+    "reference/charms/kratos-external-idp-integrator": "../../../identity-platform/reference/charms/kratos-external-idp-integrator/",
+    "reference/charms/oauth2-proxy": "../../../identity-platform/reference/charms/oauth2-proxy/",
+    "reference/charms/openfga": "../../../identity-platform/reference/charms/openfga/",
+    "reference/hydra-observability": "../../identity-platform/reference/hydra-observability/",
+    "reference/index": "../identity-platform/reference/",
+    "reference/kratos-observability": "../../identity-platform/reference/kratos-observability/",
+    "reference/login-ui-observability": "../../identity-platform/reference/login-ui-observability/",
+    "reference/openfga-observability": "../../identity-platform/reference/openfga-observability/",
+    "reference/self-service-flows": "../../identity-platform/reference/self-service-flows/",
+    "reference/self-service-flows-login-flow": "../../identity-platform/reference/self-service-flows-login-flow/",
+    "tutorial/canonical-identity-access-proxy": "../../identity-platform/tutorial/canonical-identity-access-proxy/",
+    "tutorial/canonical-identity-platform": "../../identity-platform/tutorial/canonical-identity-platform/",
+    "tutorial/charms/glauth": "../../../identity-platform/tutorial/charms/glauth/",
+    "tutorial/charms/glauth-utils": "../../../identity-platform/tutorial/charms/glauth-utils/",
+    "tutorial/charms/hydra": "../../../identity-platform/tutorial/charms/hydra/",
+    "tutorial/charms/index": "../../identity-platform/tutorial/charms/",
+    "tutorial/charms/kratos": "../../../identity-platform/tutorial/charms/kratos/",
+    "tutorial/charms/openfga": "../../../identity-platform/tutorial/charms/openfga/",
+    "tutorial/index": "../identity-platform/tutorial/",
+}
 
 
 ###########################
