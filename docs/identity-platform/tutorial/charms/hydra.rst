@@ -35,8 +35,8 @@ Once that is done (no need to wait for it to be ready) we can proceed in deployi
 
 .. code-block:: shell
 
-    $ juju deploy hydra --channel 0.2/stable
-    Deployed "hydra" from charm-hub charm "hydra", revision 278 in channel 0.2/stable on ubuntu@22.04/stable
+    $ juju deploy hydra --channel latest/stable
+    Deployed "hydra" from charm-hub charm "hydra", revision 396 in channel latest/stable on ubuntu@22.04/stable
 
 Integrate with PostgreSQL
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,9 +54,9 @@ after some time we should be able to inspect that all has been successfully depl
     Model  Controller          Cloud/Region        Version  SLA          Timestamp
     hydra  microk8s-localhost  microk8s/localhost  3.6.3    unsupported  15:57:02+01:00
 
-    App         Version  Status   Scale  Charm           Channel     Rev  Address         Exposed  Message
-    hydra       v2.2.0   waiting      1  hydra           0.2/stable  278  10.152.183.141  no       installing agent
-    postgresql  14.10    active       1  postgresql-k8s  14/stable   193  10.152.183.100  no       Primary
+    App         Version  Status   Scale  Charm           Channel        Rev  Address         Exposed  Message
+    hydra       v25.4.0   waiting      1  hydra           latest/stable  396  10.152.183.141  no       installing agent
+    postgresql  14.10    active       1  postgresql-k8s  14/stable      193  10.152.183.100  no       Primary
 
     Unit           Workload  Agent  Address       Ports  Message
     hydra/0* blocked   idle   10.1.245.156         Missing required relation with ingress
@@ -99,7 +99,7 @@ after some time we should be able to inspect that all has been successfully depl
     hydra  microk8s-localhost  microk8s/localhost  3.6.3    unsupported  16:02:36+01:00
 
     App          Version  Status   Scale  Charm           Channel        Rev  Address         Exposed  Message
-    hydra        v2.2.0   waiting      1  hydra           0.2/stable     278  10.152.183.141  no       installing agent
+    hydra        v25.4.0  waiting      1  hydra           latest/stable  396  10.152.183.141  no       installing agent
     postgresql   14.10    active       1  postgresql-k8s  14/stable      193  10.152.183.100  no       Primary
     traefik-k8s  v2.11.0  active       1  traefik-k8s     latest/stable  176  10.64.140.0     no       
 
