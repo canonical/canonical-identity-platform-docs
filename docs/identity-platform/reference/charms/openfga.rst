@@ -15,6 +15,5 @@ Project and community
 OpenFGA is a member of the Ubuntu family. It’s an open source project that warmly welcomes community projects, contributions, suggestions, fixes and constructive feedback.
 
 * `Code of conduct <https://ubuntu.com/community/code-of-conduct>`_
-* `Join the Discourse community forum <https://discourse.charmhub.io/tag/identity>`_
 * `Get support <https://github.com/canonical/openfga-operator/issues>`_
 * `Contribute <https://github.com/canonical/openfga-operator/blob/main/CONTRIBUTING.md>`_
