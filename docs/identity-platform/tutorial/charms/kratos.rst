@@ -35,8 +35,8 @@ Once that is done (no need to wait for it to be ready) we can proceed in deployi
 
 .. code-block:: shell
 
-    $ juju deploy kratos --channel 0.2/stable
-    Deployed "kratos" from charm-hub charm "kratos", revision 399 in channel 0.2/stable on ubuntu@22.04/stable
+    $ juju deploy kratos --channel latest/stable
+    Deployed "kratos" from charm-hub charm "kratos", revision 565 in channel latest/stable on ubuntu@22.04/stable
 
 Integrate with PostgreSQL
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -55,7 +55,7 @@ after some time we should be able to inspect that all has been successfully depl
     kratos  microk8s-localhost  microk8s/localhost  3.6.3    unsupported  09:45:28+01:00
 
     App          Version  Status  Scale  Charm           Channel        Rev  Address         Exposed  Message
-    kratos       v1.1.0   active      1  kratos          0.2/stable     399  10.152.183.42   no
+    kratos       v1.3.1   active      1  kratos          latest/stable  565  10.152.183.42   no
     postgresql   14.10    active      1  postgresql-k8s  14/stable      193  10.152.183.100  no       Primary
 
     Unit            Workload  Agent  Address       Ports  Message

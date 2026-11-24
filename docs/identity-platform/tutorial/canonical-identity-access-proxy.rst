@@ -724,7 +724,7 @@ and integrate it with the S3 integrator charm to use as a storage backend for Sp
 
 .. note::
 
-    See more: `Deploy Spark History Server <https://discourse.charmhub.io/t/charmed-spark-k8s-documentation-how-to-deploy-spark-history-server/10979>`_
+    See more: `Deploy Spark History Server <https://canonical.com/data/spark/docs/3.5/how-to/spark-history-server/>`_
 
 Before deploying the application, some prerequisites must be met. First, export your MinIO credentials and S3 endpoint as environment variables:
 
