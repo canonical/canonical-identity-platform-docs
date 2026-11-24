@@ -16,6 +16,7 @@ Project and community
 The Charmed Authentik LDAP Outpost operator is a member of the Ubuntu family. It is an open source project that welcomes community contributions, suggestions, fixes, and constructive feedback.
 
 * `Code of conduct <https://ubuntu.com/community/code-of-conduct>`_
+* `Join the Discourse community forum <https://discourse.charmhub.io/tag/identity>`_
 * `Get support <https://github.com/canonical/authentik-ldap-outpost-operator/issues>`_
 * `Contribute <https://github.com/canonical/authentik-ldap-outpost-operator/blob/main/CONTRIBUTING.md>`_
 

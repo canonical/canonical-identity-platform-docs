@@ -15,6 +15,7 @@ Project and community
 Kratos External IDP Integrator is a member of the Ubuntu family. It’s an open-source project that warmly welcomes community projects, contributions, suggestions, fixes, and constructive feedback.
 
 * `Code of conduct <https://ubuntu.com/community/code-of-conduct>`_
+* `Join the Discourse community forum <https://discourse.charmhub.io/tag/identity>`_
 * `Join the Matrix community chat <https://matrix.to/#/!3xNKp3PFtjTOKbwJykMRzruCbSEMkXb8ZRrDKk1vknI?via=ubuntu.com>`_
 * `Contribute on GitHub <https://github.com/canonical/kratos-external-idp-integrator>`_
 

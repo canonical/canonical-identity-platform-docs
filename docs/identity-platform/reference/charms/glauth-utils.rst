@@ -28,6 +28,7 @@ Project and community
 The ``glauth-utils`` charmed operator is a member of the Ubuntu family. It’s an open source project that warmly welcomes community projects, contributions, suggestions, fixes and constructive feedback.
 
 * `Code of conduct <https://ubuntu.com/community/code-of-conduct>`_
+* `Join the Discourse community forum <https://discourse.charmhub.io/tag/identity>`_
 * `Get support <https://github.com/canonical/glauth-utils/issues>`_
 * `Contribute <https://github.com/canonical/glauth-utils/blob/main/CONTRIBUTING.md>`_
 
